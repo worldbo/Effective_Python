@@ -40,4 +40,24 @@ Version 1.0
    在每个部分中，各import语句应按模块字母顺序排列。
 9、当编写Python代码时，总应遵循pep8风格指南。
 
+#第三条：bytes、Unicode与Unicode区别（Python3只有bytes和str）
+1、bytes的实例包含原始的8位值（就是原始字节，每个字节有8个二进制位）
+   str的实例包含Unicode字符。
+2、str的Unicode字符转换成二进制数，必须使用encode方法；二进制转换Unicode，使用decode方法。
+3、编写Python时，必须把编解码操作放到界面最外面；程序核心部分必须使用Unicode字符类型。
+4、输出文本信息只采用UTF-8编码形式。
+5、如果通过内置的open函数获取文件的句柄，该句柄默认会采用UTF-8编码格式来操作文件。
+   如向文件中写二进制数必须采用二进制的写入模式（'wb'）来开启操作的文件。
+   即：open（'xx.bin','wb'）,不能采用字符写入模式'w';读文件用'rb',不能用'r'.
+   否则会产生：TypeError：must be str,no bytes.
+
+
+#第四条：用辅助函数取代复杂的表达式
+
+
+#第五条：切割序列的方法（page10）
+
+
+
+
 
