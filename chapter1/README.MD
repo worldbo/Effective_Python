@@ -63,6 +63,23 @@ Version 1.0
 4、如对左侧的切割的列表进行赋值操作，则该原列表的对应制定的对象元素会改变成相应的赋值。
    该赋值的个数不一定与分割的数相同，其会根据新的个数适当的扩张或收缩。切割范围前后值不变。
 
+#第六条：单次切片操作，不要同时指定start、end和stride
+1、除基本切割操作外，Python提供了somelist[start:end:stride]形式写法，实现步进切割。
+2、stride值为-1时，对字符串和ASCII字符可以反转过来，但对已经编码的UTF-8的Unicode无效。
+3、不要把start、end和stride写一起，并且stride尽量用正值，同时省略tart、end值。
+4、如一定要配合tart、end的化，可先赋值给一个变量后再进行二次切割。
+5、如时间或内存要求严格，就用内置的itertools模块中的islide方法，其不允许负值。
+
+
+#第七条：用列表推导取代map和filter（page15）
+1、一种Python精炼的写法：根据一份列表制作另一份的表达式-list comprehensio（列表推导）
+2、例如：x**2 for x in a 其比map函数更清晰。
+3、如用map需要lambda函数，如x = map（lambda x:x**2，a）
+4、如有过滤条件，直接在循环后加条件表达式即可。
+   例如：x**2 for x in a if x % 2 == 0
+5、如用flite函数与map结合，就比较麻烦。
+   例如：alt = map(lambda x: x**2,filter(lambda x: x % 2 == 0, a))
+6、字典（dict）与集（set），也有和列表类似的推导机制。
 
 
 
