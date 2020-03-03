@@ -49,3 +49,10 @@ def get_first_int(values, key, default=0):
     return found
 
 #page10
+a = ['a','b','c','d','e','f','g','h']
+print('First four:',a[:4])
+print('Last four:',a[-4:])
+print('Middle tow:',a[3:-3])
+print('First four:',a[1:4])
+first_twenty_items = a[:20]
+last_twenty_items = a[-20:]
