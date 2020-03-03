@@ -48,11 +48,47 @@ def get_first_int(values, key, default=0):
         found = default
     return found
 
-#page10
-a = ['a','b','c','d','e','f','g','h']
-print('First four:',a[:4])
-print('Last four:',a[-4:])
-print('Middle tow:',a[3:-3])
-print('First four:',a[1:4])
+
+# page10
+a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+print('First four:', a[:4])
+print('Last four:', a[-4:])
+print('Middle tow:', a[3:-3])
+print('First four:', a[1:4])
 first_twenty_items = a[:20]
 last_twenty_items = a[-20:]
+
+# page13
+a = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+odds = a[::2]  # 取奇数
+evens = a[1::2]  # 取偶数
+print(odds)
+print(evens)
+x = b'mongoose'
+y = x[::-1]
+print(y)
+
+w = '您好'
+y = w[::-1]
+print(y)
+# x = w.encode('utf-8')
+# y = x[::-1]
+# z = y.decode('utf-8')
+
+# page15
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+squares = [x ** 2 for x in a]
+print(squares)
+
+even_squares = [x ** 2 for x in a if x % 2 == 0]
+print(even_squares)
+
+alt = map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, a))
+assert even_squares == list(alt)  # assert断言语句
+
+chile_ranks = {'ghost': 1, 'habanero': 2, 'cayenne': 3}
+rank_dict = {rank: name for name, rank in chile_ranks.items()}
+chile_len_set = {len(name) for name in rank_dict.values()}
+print(rank_dict)
+print(chile_len_set)
+
