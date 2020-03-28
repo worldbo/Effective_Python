@@ -1,7 +1,21 @@
 # 导入pymysql方法
 import pymysql
+import xlrd
+import xlwt
+import numpy as np
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+from operator import itemgetter
+import re
+import os
 
 many = False
+csv_file_path = 'F:/1/0226.xls'
+csv_filename = '0226.xls'
+database = 'evdata'
+table_name = ''
+
 # 连接数据库
 config = {'host': 'localhost',
           'port': 3306,
@@ -15,9 +29,9 @@ cur = conn.cursor()
 cur.execute('SHOW DATABASES')
 print(cur.fetchall())
 dab = cur.execute('USE world')
-table_number = cur.execute('SELECT * FROM world.city;')
 cur.execute('SHOW TABLES')
 print(cur.fetchall())
+table_number = cur.execute('SELECT * FROM world.city;')
 if many:
     result = cur.fetchall()
     print('多条', result)
@@ -26,6 +40,8 @@ else:
     print('单条', result)
 cur.close()
 conn.close()
+
+
 
 
 def load_csv(csv_file_path, table_name, database='evdata'):

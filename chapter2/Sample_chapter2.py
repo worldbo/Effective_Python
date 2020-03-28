@@ -139,8 +139,9 @@ address = 'Four score and seven years age .....'
 result = list(index_words_iter(address))
 print(result[:3])
 
-#page36-2
+# page36-2
 from itertools import islice
+
 
 def index_file(handle):
     offset = 0
@@ -150,10 +151,81 @@ def index_file(handle):
         for letter in line:
             offset += 1
             if letter == ' ':
-                yield  offset
+                yield offset
 
 
 with open('F:/python/Effective_Python/chapter2/2.txt') as f:
     it = index_file(f)
-    results = islice(it,0,3) #slice() 函数实现切片对象，主要用在切片操作函数里的参数传递。
+    results = islice(it, 0, 3)  # slice() 函数实现切片对象，主要用在切片操作函数里的参数传递。
     print(list(results))
+
+
+# page37
+def normalize(numbers):  # 标准化函数
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+
+
+visits = [15, 35, 80]
+percentages = normalize(visits)
+print(percentages)
+
+
+def fun():
+    li = [15, 35, 80]
+    for i in li:
+        yield i
+
+
+print(normalize(fun()))
+
+
+# files 方式 生成器
+# def read_visits(data_path):
+#     with open(data_path) as f:
+#         for line in f:
+#             yield int(line)
+
+
+# it = read_visits('F:/python/Effective_Python/chapter2/2.txt')
+# print((list))
+# percentages = normalize(it)
+# print(percentages)  # Already exhaustes
+
+# page38
+# def normalize_copy(numbers):
+#     numbers = list(numbers)  # Copy the iterator
+#     total = sum(numbers)
+#     result = []
+#     for value in numbers:
+#         percent = 100 * value / total
+#         result.append(percent)
+#     return result
+
+
+# it = read_visits('F:/python/Effective_Python/chapter2/2.txt')
+# print(it)
+# percentages = normalize_copy(it)
+# print(list(it))  # Already exhaustes
+
+
+class ReadVisits(object):
+    def __init__(self, data_path):
+        self.data_path = data_path
+
+    def __iter__(self):
+        with open(self.data_path) as f:
+            for line in f:
+                yield int(line)
+
+
+path = 'F:/python/Effective_Python/chapter2/2.txt'
+visits = ReadVisits(path)
+percentages = normalize(visits)
+print(percentages)
+
+
