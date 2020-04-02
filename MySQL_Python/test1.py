@@ -10,7 +10,7 @@ from operator import itemgetter
 import re
 import os
 
-many = False
+many = True
 csv_file_path = 'F:/1/0226.xls'
 csv_filename = '0226.xls'
 database = 'evdata'
@@ -28,10 +28,10 @@ conn = pymysql.connect(**config)
 cur = conn.cursor()
 cur.execute('SHOW DATABASES')
 print(cur.fetchall())
-dab = cur.execute('USE world')
+dab = cur.execute('USE test')
 cur.execute('SHOW TABLES')
 print(cur.fetchall())
-table_number = cur.execute('SELECT * FROM world.city;')
+table_number = cur.execute('SELECT * FROM `sp2cc` WHERE sp2cc.`流水号` = 2190718273142;')
 if many:
     result = cur.fetchall()
     print('多条', result)
