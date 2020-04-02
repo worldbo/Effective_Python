@@ -14,11 +14,11 @@ os.getcwd()  # 判断当前程序文件的路径
 
 # 连接Oracle数据库，下面括号里内容根据自己实际情况填写
 # conn = cx_Oracle.connect('用户名/密码@IP:端口号/SERVICE_NAME')
-db = cx_Oracle.connect('scott', 'tiger', 'localhost:1521/ORCL')
-db1 = cx_Oracle.connect('scott/tiger@localhost:1521/ORCL')
+conn = cx_Oracle.connect('scott', 'tiger', 'localhost:1521/ORCL')
+# conn1 = cx_Oracle.connect('scott/tiger@localhost:1521/ORCL')
 dsn_tns = cx_Oracle.makedsn('localhost', 1521, 'ORCL')
 print(dsn_tns)
-print(db.version)  # 判断是否链接成功oracle
+print(conn.version)  # 判断是否链接成功oracle
 
 # 每月Excel表格数据清洗与导入Oracle：
 
@@ -48,3 +48,27 @@ print('生成临时文件：' + EXcel_FilesPath + 'ls_out.xls' + '成功！！�
 print("================================ Finish ============================")
 
 # 每月对导入数据的分析：
+
+# 使用cursor()方法获取操作游标
+cursor = conn.cursor()
+
+# =====================导入===============================================
+
+
+# ======================分析================================================
+
+query = cursor.execute("select * from LS_KSXTSJYC t")
+
+# 获取所有数据
+all_data = cursor.fetchall()
+# print(all_data)
+for i, ROW_Data in enumerate(all_data):
+    print('第 %s 列: %s：' % (i + 1, ROW_Data))
+    for ROW_Item in ROW_Data:
+        print(ROW_Item)
+
+# 关闭光标与数据库
+cursor.close()
+
+# cursor1.close()
+conn.close()
