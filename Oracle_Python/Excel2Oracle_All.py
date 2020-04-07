@@ -46,13 +46,6 @@ def mapping_df_types(df):
         if "int" in str(j):
             dtypedict.update({i: DOUBLE_PRECISION()})
     return dtypedict
-# table = pd.read_table("data.csv", sep=r',',
-#                       names=["Year", "Make", "Model", "Description"],
-#                       converters = {'Description' : strip,
-#                                     'Model' : strip,
-#                                     'Make' : strip,
-#                                     'Year' : make_int})
-# print(table)
 
 # 对DataFrame的列标签进行修改
 def named_df_Columns(df):
