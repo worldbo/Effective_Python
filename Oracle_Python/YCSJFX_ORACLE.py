@@ -1,4 +1,10 @@
-# 月异常数据分析程序---DATE:20200101 version：1.0 ---author：bzy
+# !/usr/bin/pyt
+# coding: utf-8
+# File Name: YCSJFX_ORACLE.py
+# 月异常数据Excel2Or
+# Created on DA
+# version：1.0 -
+# author：bzy
 import xlrd
 import xlwt
 import numpy as np
