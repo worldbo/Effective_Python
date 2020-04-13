@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pydata-book/Analyse_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,43 +63,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Python.Oracle_table2table2">
-    <configuration name="Excel2Oracle_All" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Analyse_report">
+    <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Excel2Oracle_All.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Oracle_table2table" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analyse_report.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,13 +87,38 @@
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table2.py" />
+      <option name="SCRIPT_NAME" value="F:\Python\Effective_Python\Oracle_Python\Oracle_table2table_all2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Oracle_table2table_all2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table_all2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Analyse_report" />
+        <item itemvalue="Python.Oracle_table2table_all2" />
         <item itemvalue="Python.Oracle_table2table2" />
         <item itemvalue="Python.select_test" />
         <item itemvalue="Python.Oracle_test1" />
-        <item itemvalue="Python.Oracle_table2table" />
-        <item itemvalue="Python.Excel2Oracle_All" />
       </list>
     </recent_temporary>
   </component>
@@ -272,21 +272,8 @@
       <workItem from="1586609700904" duration="641000" />
       <workItem from="1586674112126" duration="3548000" />
       <workItem from="1586739423492" duration="8989000" />
-      <workItem from="1586757134666" duration="6473000" />
-    </task>
-    <task id="LOCAL-00010" summary="第八条：在page18">
-      <created>1583332560708</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1583332560708</updated>
-    </task>
-    <task id="LOCAL-00011" summary="第五条：在page10">
-      <created>1583332640095</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1583332640095</updated>
+      <workItem from="1586757134666" duration="7086000" />
+      <workItem from="1586778533642" duration="8742000" />
     </task>
     <task id="LOCAL-00012" summary="第九条：在page18">
       <created>1583414444923</created>
@@ -617,7 +604,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586741951382</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="增加合格率等统计表格!!!">
+      <created>1586763649023</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1586763649024</updated>
+    </task>
+    <task id="LOCAL-00060" summary="增加合格率等统计表格!!!">
+      <created>1586778973073</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1586778973073</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第七条：在page16" />
     <MESSAGE value="第七条：在page15" />
     <MESSAGE value="第八条：在page18" />
     <MESSAGE value="第五条：在page10" />
@@ -692,7 +692,8 @@
     <MESSAGE value="Oracle_table2table_all.py" />
     <MESSAGE value="select_test.py" />
     <MESSAGE value="增加合格率等统计表格" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加合格率等统计表格" />
+    <MESSAGE value="增加合格率等统计表格!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加合格率等统计表格!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -703,11 +704,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586741948897">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586778969901">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586741948897" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586778969901" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -816,20 +817,20 @@
     </state>
     <state x="453" y="97" width="675" height="655" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585204064202" />
     <state x="2031" y="240" width="810" height="823" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586243064069" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1586685144397">
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1586778978967">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="292" y="99" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585811437713" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586685144397" />
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586778978967" />
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1583114089274">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586757242093">
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586778533679">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585889867176" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586757242093" />
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586778533679" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584186847007" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
