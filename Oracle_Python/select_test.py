@@ -23,13 +23,12 @@ def To_Numbers(strTargetField):
     ", '$%', ' '),' ',''),0),0))"
     return (numResult)
 
-print(To_Numbers('hgl'))
 
 engine1 = create_engine("oracle+cx_oracle://{}:{}@{}/{}".format(username1, password1, host_port1, database1),
                         encoding='utf-8', echo=True)
 
 ###查询相关表格并进行简单分析
-sql_query = "select * from KM2YCSHZB t WHERE %s > 61.6 ORDER BY to_number(ksrs) DESC" % (To_Numbers('hgl'))
+sql_query = "select * from KM2YCSHZB t WHERE %s < 5.4 ORDER BY to_number(ksrs) DESC" % (To_Numbers('zb'))
 data = pd.read_sql(sql_query, engine1)  # Step1 : read csv
 print(data.head())
 

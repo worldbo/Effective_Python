@@ -2,7 +2,8 @@
 
 import xlrd
 import xlwt
-
+import numpy as np
+import pandas as pd
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
@@ -40,8 +41,15 @@ engine1 = create_engine("oracle+cx_oracle://{}:{}@{}/{}".format(username1, passw
 engine2 = create_engine("oracle+cx_oracle://{}:{}@{}/{}".format(username2, password2, host_port2, database2),encoding='utf-8', echo=True)
                        #"//scott:tiger@localhost:1521/ORCL",encoding='utf-8', echo=True)
 
-data = pd.read_sql("select * from KSXTSJYC t",engine1)
-
+data = pd.read_sql("select * from KSXTSJYC t",engine1) #Step1 : read csv
 print(data.head())
+
+data.info()
+print(data.describe(include='all')) #Step2 : preview data
+
+data1 = data.copy(deep=True) #Step3: check null value for every column
+print(data1)
+print(data1.isnull().sum())
+
 
 data.to_sql('KSXTSJYC_LS',con=engine2,index=False,if_exists='append',dtype=dtypedict,chunksize=100)

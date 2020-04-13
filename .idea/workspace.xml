@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="第二章：在page28">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySQL_Python/CVS2MySQL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySQL_Python/xls2mysql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Oracle_Python/oracle_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter2/20.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Effective_Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Effective_Python.iml" afterDir="false" />
+    <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL_Python/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL_Python/test1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter2/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chapter2/2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter2/READEME1.MD" beforeDir="false" afterPath="$PROJECT_DIR$/chapter2/READEME1.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter2/Sample_chapter2.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter2/Sample_chapter2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pydata-book/CCYD_Data_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/CCYD_Data_Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oracle_Python/select_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Oracle_Python/select_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter3/23.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter3/23.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter3/README2.MD" beforeDir="false" afterPath="$PROJECT_DIR$/chapter3/README2.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pydata-book/excle_txt_csv2oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/excle_txt_csv2oracle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,6 +57,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql.8&#10;mysql&#10;oracle&#10;sqlite" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -58,8 +69,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Python.oracle_test">
-    <configuration name="CVS2MySQL" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.select_test">
+    <configuration name="Drop_space" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,12 +78,78 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MySQL_Python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MySQL_Python/CVS2MySQL.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Drop_space.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Excel2Oracle_All" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Excel2Oracle_All.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Oracle_table2table" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Oracle_test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="F:\Python\Effective_Python\Oracle_Python\Oracle_table2table_all.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -103,83 +180,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="oracle_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="select_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/oracle_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MySQL_Python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MySQL_Python/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tets" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MySQL_Python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MySQL_Python/tets.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="xls2mysql" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MySQL_Python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MySQL_Python/xls2mysql.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/select_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.oracle_test" />
-        <item itemvalue="Python.xls2mysql" />
-        <item itemvalue="Python.CVS2MySQL" />
-        <item itemvalue="Python.test1" />
-        <item itemvalue="Python.tets" />
+        <item itemvalue="Python.select_test" />
+        <item itemvalue="Python.Oracle_test1" />
+        <item itemvalue="Python.Oracle_table2table" />
+        <item itemvalue="Python.Excel2Oracle_All" />
+        <item itemvalue="Python.Drop_space" />
       </list>
     </recent_temporary>
   </component>
@@ -202,6 +216,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.20437956" />
           <treeState>
             <expand />
             <select />
@@ -249,42 +264,23 @@
       <workItem from="1585209993966" duration="1744000" />
       <workItem from="1585315564437" duration="8598000" />
       <workItem from="1585367518172" duration="6391000" />
-      <workItem from="1585407257221" duration="3344000" />
-    </task>
-    <task id="LOCAL-00001" summary="第一条:确认版本号">
-      <created>1583115988102</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583115988102</updated>
-    </task>
-    <task id="LOCAL-00002" summary="确认pep8风格指南。">
-      <created>1583151189563</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583151189563</updated>
-    </task>
-    <task id="LOCAL-00003" summary="第五条：page10">
-      <created>1583157104568</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1583157104568</updated>
-    </task>
-    <task id="LOCAL-00004" summary="第五条：在page10">
-      <created>1583224803695</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1583224803695</updated>
-    </task>
-    <task id="LOCAL-00005" summary="第五条：在page10">
-      <created>1583242885034</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1583242885034</updated>
+      <workItem from="1585407257221" duration="4595000" />
+      <workItem from="1585469696658" duration="6076000" />
+      <workItem from="1585705540610" duration="10652000" />
+      <workItem from="1585745326249" duration="9193000" />
+      <workItem from="1585786727686" duration="1680000" />
+      <workItem from="1585801247601" duration="5544000" />
+      <workItem from="1585889684018" duration="20477000" />
+      <workItem from="1585970026690" duration="5108000" />
+      <workItem from="1585975173861" duration="14292000" />
+      <workItem from="1586004525806" duration="10770000" />
+      <workItem from="1586083203430" duration="1130000" />
+      <workItem from="1586174190826" duration="10163000" />
+      <workItem from="1586242781185" duration="8640000" />
+      <workItem from="1586565871459" duration="8883000" />
+      <workItem from="1586609700904" duration="641000" />
+      <workItem from="1586674112126" duration="3548000" />
+      <workItem from="1586739423492" duration="514000" />
     </task>
     <task id="LOCAL-00006" summary="第五条：在page10">
       <created>1583242962518</created>
@@ -461,7 +457,175 @@
       <option name="project" value="LOCAL" />
       <updated>1585207239104</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Oracle_Python">
+      <created>1585411107760</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1585411107760</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Oracle_Python">
+      <created>1585411206053</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1585411206053</updated>
+    </task>
+    <task id="LOCAL-00033" summary="YCSJFX_ORACLE">
+      <created>1585710222466</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1585710222466</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Excel2Oracle">
+      <created>1585748996522</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1585748996522</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Excel2Oracle">
+      <created>1585752591740</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1585752591740</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Excel2Oracle">
+      <created>1585752607235</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1585752607235</updated>
+    </task>
+    <task id="LOCAL-00037" summary="#第二十一条：">
+      <created>1585752915744</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1585752915744</updated>
+    </task>
+    <task id="LOCAL-00038" summary="#第二十一条：">
+      <created>1585754215982</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1585754215982</updated>
+    </task>
+    <task id="LOCAL-00039" summary="#第三章 类与继承">
+      <created>1585754506584</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1585754506584</updated>
+    </task>
+    <task id="LOCAL-00040" summary="#第三章 类与继承">
+      <created>1585811095122</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811095122</updated>
+    </task>
+    <task id="LOCAL-00041" summary="#第三章 类与继承">
+      <created>1585811129216</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811129216</updated>
+    </task>
+    <task id="LOCAL-00042" summary="#第三章 类与继承">
+      <created>1585811187890</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811187890</updated>
+    </task>
+    <task id="LOCAL-00043" summary="#第三章 类与继承">
+      <created>1585811211015</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811211015</updated>
+    </task>
+    <task id="LOCAL-00044" summary="#第三章 类与继承">
+      <created>1585811234483</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811234483</updated>
+    </task>
+    <task id="LOCAL-00045" summary="#第三章 类与继承">
+      <created>1585811259584</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811259584</updated>
+    </task>
+    <task id="LOCAL-00046" summary="#第三章 类与继承">
+      <created>1585811282782</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811282782</updated>
+    </task>
+    <task id="LOCAL-00047" summary="#第三章 类与继承&#10;23条">
+      <created>1585811429379</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811429379</updated>
+    </task>
+    <task id="LOCAL-00048" summary="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）">
+      <created>1585890454178</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1585890454178</updated>
+    </task>
+    <task id="LOCAL-00049" summary="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）">
+      <created>1586013417040</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1586013417040</updated>
+    </task>
+    <task id="LOCAL-00050" summary="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）">
+      <created>1586266766371</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586266766371</updated>
+    </task>
+    <task id="LOCAL-00051" summary="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）">
+      <created>1586266795408</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1586266795408</updated>
+    </task>
+    <task id="LOCAL-00052" summary="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）">
+      <created>1586266867138</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1586266867138</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Oracle_table2table_all.py">
+      <created>1586579154907</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1586579154910</updated>
+    </task>
+    <task id="LOCAL-00054" summary="select_test.py">
+      <created>1586685138228</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1586685138229</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,6 +659,13 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="OPEN_TABS">
@@ -504,8 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第一条:确认版本号" />
-    <MESSAGE value="确认pep8风格指南。" />
     <MESSAGE value="第五条：page10" />
     <MESSAGE value="第七条：在page16" />
     <MESSAGE value="第七条：在page15" />
@@ -522,22 +691,44 @@
     <MESSAGE value="Python pandas Excel应用" />
     <MESSAGE value="第二十条：page46" />
     <MESSAGE value="MySQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="MySQL" />
+    <MESSAGE value="Oracle_Python" />
+    <MESSAGE value="YCSJFX_ORACLE" />
+    <MESSAGE value="Excel2Oracle" />
+    <MESSAGE value="#第二十一条：" />
+    <MESSAGE value="#第三章 类与继承" />
+    <MESSAGE value="#第三章 类与继承&#10;23条" />
+    <MESSAGE value="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）" />
+    <MESSAGE value="Oracle_table2table_all.py" />
+    <MESSAGE value="select_test.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="select_test.py" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585748770117" />
     <state x="656" y="65" key="#xdebugger.evaluate" timestamp="1583557895245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="311" y="0" key="CommitChangelistDialog2" timestamp="1585411104871">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586685135333">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586685135333" />
+    <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
+    <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585411104871" />
-    <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
+    <state width="314" height="242" key="DatabaseViewActions_Filter/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585747747893" />
     <state x="65" y="4" width="1416" height="676" key="DiffContextDialog" timestamp="1583226578372">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="65" y="4" width="1416" height="676" key="DiffContextDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583226578372" />
+    <state x="489" y="117" key="FileChooserDialogImpl" timestamp="1585748745003">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="489" y="117" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585748745003" />
     <state x="400" y="295" key="Github.CreateGistDialog" timestamp="1584125516654">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -551,58 +742,62 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="627" y="67" key="Github.UntrackedFilesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114060608" />
-    <state width="1544" height="144" key="GridCell.Tab.0.bottom" timestamp="1585324173632">
+    <state width="1544" height="244" key="GridCell.Tab.0.bottom" timestamp="1585895427113">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="144" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585324173632" />
+    <state width="1544" height="244" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
     <state width="1544" height="251" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1544" height="144" key="GridCell.Tab.0.center" timestamp="1585324173632">
+    <state width="1544" height="244" key="GridCell.Tab.0.center" timestamp="1585895427113">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="144" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585324173632" />
+    <state width="1544" height="244" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
     <state width="1544" height="251" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1544" height="144" key="GridCell.Tab.0.left" timestamp="1585324173631">
+    <state width="1544" height="244" key="GridCell.Tab.0.left" timestamp="1585895427112">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="144" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585324173631" />
+    <state width="1544" height="244" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427112" />
     <state width="1544" height="251" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1544" height="144" key="GridCell.Tab.0.right" timestamp="1585324173632">
+    <state width="1544" height="244" key="GridCell.Tab.0.right" timestamp="1585895427113">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="144" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585324173632" />
+    <state width="1544" height="244" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
     <state width="1544" height="251" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1544" height="244" key="GridCell.Tab.1.bottom" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.1.bottom" timestamp="1585895427115">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.1.center" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
+    <state width="1544" height="244" key="GridCell.Tab.1.center" timestamp="1585895427114">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.1.left" timestamp="1583665048843">
+    <state width="1544" height="244" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
+    <state width="1544" height="244" key="GridCell.Tab.1.left" timestamp="1585895427114">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048843" />
-    <state width="1544" height="244" key="GridCell.Tab.1.right" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
+    <state width="1544" height="244" key="GridCell.Tab.1.right" timestamp="1585895427114">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.2.bottom" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
+    <state width="1544" height="244" key="GridCell.Tab.2.bottom" timestamp="1585895427116">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.2.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.2.center" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.2.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427116" />
+    <state width="1544" height="244" key="GridCell.Tab.2.center" timestamp="1585895427115">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.2.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.2.left" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.2.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
+    <state width="1544" height="244" key="GridCell.Tab.2.left" timestamp="1585895427115">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.2.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
-    <state width="1544" height="244" key="GridCell.Tab.2.right" timestamp="1583665048844">
+    <state width="1544" height="244" key="GridCell.Tab.2.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
+    <state width="1544" height="244" key="GridCell.Tab.2.right" timestamp="1585895427116">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1544" height="244" key="GridCell.Tab.2.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583665048844" />
+    <state width="1544" height="244" key="GridCell.Tab.2.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427116" />
+    <state width="264" height="550" key="HiddenNamespacesPopup" timestamp="1585747906149">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="264" height="550" key="HiddenNamespacesPopup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585747906149" />
     <state x="598" y="88" key="RollbackChangesDialog" timestamp="1583225975633">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -612,34 +807,42 @@
     </state>
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583239601300" />
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584042759599" />
-    <state x="453" y="97" width="675" height="655" key="StructurePopup" timestamp="1585204064202">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="2031" y="240" width="810" height="823" key="StructurePopup" timestamp="1586243064069">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="453" y="97" width="675" height="655" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585204064202" />
-    <state x="292" y="99" key="Vcs.Push.Dialog.v2" timestamp="1585411114796">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="2031" y="240" width="810" height="823" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586243064069" />
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1586685144397">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="292" y="99" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585411114796" />
+    <state x="292" y="99" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585811437713" />
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586685144397" />
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1583114089274">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="289" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1585407257246">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586739506133">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585407257246" />
+    <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585889867176" />
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586739506133" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584186847007" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583228542834" />
-    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1583119146030">
+    <state x="2207" y="287" key="git4idea.merge.GitPullDialog" timestamp="1586579162257">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2207" y="287" key="git4idea.merge.GitPullDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586579162257" />
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1585710805657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583119146030" />
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585710805657" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Effective_Python$Helper_Function.coverage" NAME="Helper_Function Coverage Results" MODIFIED="1583484626218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter1" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Excel2Oracle.coverage" NAME="Excel2Oracle Coverage Results" MODIFIED="1585895387437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oracle_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$18.coverage" NAME="18 Coverage Results" MODIFIED="1584874060023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
     <SUITE FILE_PATH="coverage/Effective_Python$Sample_chapter2.coverage" NAME="Sample_chapter2 Coverage Results" MODIFIED="1583813953596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
     <SUITE FILE_PATH="coverage/Effective_Python$CCYD_Data_Analysis.coverage" NAME="CCYD_Data_Analysis Coverage Results" MODIFIED="1584188821323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
@@ -647,6 +850,6 @@
     <SUITE FILE_PATH="coverage/Effective_Python$test.coverage" NAME="test Coverage Results" MODIFIED="1584192414291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
     <SUITE FILE_PATH="coverage/Effective_Python$tets.coverage" NAME="tets Coverage Results" MODIFIED="1585199947180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$19.coverage" NAME="19 Coverage Results" MODIFIED="1584876597647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
-    <SUITE FILE_PATH="coverage/Effective_Python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585315760308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
+    <SUITE FILE_PATH="coverage/Effective_Python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585473007026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
   </component>
 </project>
