@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Oracle_Python/Oracle_table2table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oracle_Python/select_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Oracle_Python/select_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter3/23.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter3/23.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter3/README2.MD" beforeDir="false" afterPath="$PROJECT_DIR$/chapter3/README2.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pydata-book/excle_txt_csv2oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/excle_txt_csv2oracle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,21 +273,7 @@
       <workItem from="1586565871459" duration="8883000" />
       <workItem from="1586609700904" duration="641000" />
       <workItem from="1586674112126" duration="3548000" />
-      <workItem from="1586739423492" duration="514000" />
-    </task>
-    <task id="LOCAL-00006" summary="第五条：在page10">
-      <created>1583242962518</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1583242962518</updated>
-    </task>
-    <task id="LOCAL-00007" summary="第七条：在page16">
-      <created>1583248670488</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1583248670488</updated>
+      <workItem from="1586739423492" duration="759000" />
     </task>
     <task id="LOCAL-00008" summary="第七条：在page15">
       <created>1583248715690</created>
@@ -625,7 +604,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586685138229</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="增加合格率等统计表格">
+      <created>1586740072215</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1586740072216</updated>
+    </task>
+    <task id="LOCAL-00056" summary="增加合格率等统计表格">
+      <created>1586740100520</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1586740100520</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第五条：page10" />
     <MESSAGE value="第七条：在page16" />
     <MESSAGE value="第七条：在page15" />
     <MESSAGE value="第八条：在page18" />
@@ -700,7 +692,8 @@
     <MESSAGE value="使用python批量导入csv、excel、txt格式文件到oracle数据库（python3x）" />
     <MESSAGE value="Oracle_table2table_all.py" />
     <MESSAGE value="select_test.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="select_test.py" />
+    <MESSAGE value="增加合格率等统计表格" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加合格率等统计表格" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -711,11 +704,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586740068845">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586740098483">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586740068845" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586740098483" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
