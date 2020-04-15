@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pydata-book/Analyse_report_all.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pydata-book/Analyse_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/Analyse_report.py" afterDir="false" />
     </list>
@@ -63,7 +64,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Python.Analyse_report">
+  <component name="RunManager" selected="Python.Analyse_report_all">
     <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +76,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analyse_report.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Analyse_report_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analyse_report_all.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,25 +129,6 @@
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Oracle_Python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table_all2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Oracle_test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
@@ -137,7 +138,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\Python\Effective_Python\Oracle_Python\Oracle_table2table_all.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Oracle_Python/Oracle_table2table_all2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Analyse_report_all" />
         <item itemvalue="Python.Analyse_report" />
         <item itemvalue="Python.Oracle_table2table_all2" />
         <item itemvalue="Python.Oracle_table2table2" />
         <item itemvalue="Python.select_test" />
-        <item itemvalue="Python.Oracle_test1" />
       </list>
     </recent_temporary>
   </component>
@@ -271,14 +272,8 @@
       <workItem from="1586739423492" duration="8989000" />
       <workItem from="1586757134666" duration="7086000" />
       <workItem from="1586778533642" duration="8793000" />
-      <workItem from="1586851482335" duration="13033000" />
-    </task>
-    <task id="LOCAL-00013" summary="第十条：在page20">
-      <created>1583416753157</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1583416753157</updated>
+      <workItem from="1586851482335" duration="14802000" />
+      <workItem from="1586910281840" duration="17442000" />
     </task>
     <task id="LOCAL-00014" summary="第二章：在page28">
       <created>1583480484458</created>
@@ -616,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586787335217</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="2.列出高于全省平均值考场的名称及高于值">
+      <created>1586873417398</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1586873417399</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第七条：在page15" />
     <MESSAGE value="第八条：在page18" />
     <MESSAGE value="第五条：在page10" />
     <MESSAGE value="第九条：在page18" />
@@ -691,7 +692,8 @@
     <MESSAGE value="select_test.py" />
     <MESSAGE value="增加合格率等统计表格" />
     <MESSAGE value="增加合格率等统计表格!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加合格率等统计表格!!!" />
+    <MESSAGE value="2.列出高于全省平均值考场的名称及高于值" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.列出高于全省平均值考场的名称及高于值" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -702,11 +704,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586873398085">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586930591017">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586873398085" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586930591017" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -733,70 +735,70 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="627" y="67" key="Github.UntrackedFilesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114060608" />
-    <state width="1864" height="331" key="GridCell.Tab.0.bottom" timestamp="1586761216759">
+    <state width="1864" height="331" key="GridCell.Tab.0.bottom" timestamp="1586927682117">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216759" />
+    <state width="1864" height="331" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682117" />
     <state width="1544" height="251" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.center" timestamp="1586761216759">
+    <state width="1864" height="331" key="GridCell.Tab.0.center" timestamp="1586927682116">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216759" />
+    <state width="1864" height="331" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682116" />
     <state width="1544" height="251" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.left" timestamp="1586761216759">
+    <state width="1864" height="331" key="GridCell.Tab.0.left" timestamp="1586927682116">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427112" />
-    <state width="1864" height="331" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216759" />
+    <state width="1864" height="331" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682116" />
     <state width="1544" height="251" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.right" timestamp="1586761216759">
+    <state width="1864" height="331" key="GridCell.Tab.0.right" timestamp="1586927682116">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216759" />
+    <state width="1864" height="331" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682116" />
     <state width="1544" height="251" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.1.bottom" timestamp="1586761216760">
+    <state width="1864" height="331" key="GridCell.Tab.1.bottom" timestamp="1586927682119">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
-    <state width="1864" height="331" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216760" />
-    <state width="1864" height="331" key="GridCell.Tab.1.center" timestamp="1586761216760">
+    <state width="1864" height="331" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682119" />
+    <state width="1864" height="331" key="GridCell.Tab.1.center" timestamp="1586927682117">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216760" />
-    <state width="1864" height="331" key="GridCell.Tab.1.left" timestamp="1586761216759">
+    <state width="1864" height="331" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682117" />
+    <state width="1864" height="331" key="GridCell.Tab.1.left" timestamp="1586927682117">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216759" />
-    <state width="1864" height="331" key="GridCell.Tab.1.right" timestamp="1586761216760">
+    <state width="1864" height="331" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682117" />
+    <state width="1864" height="331" key="GridCell.Tab.1.right" timestamp="1586927682117">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216760" />
-    <state width="1864" height="331" key="GridCell.Tab.2.bottom" timestamp="1586761216761">
+    <state width="1864" height="331" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682117" />
+    <state width="1864" height="331" key="GridCell.Tab.2.bottom" timestamp="1586927682120">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.2.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427116" />
-    <state width="1864" height="331" key="GridCell.Tab.2.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216761" />
-    <state width="1864" height="331" key="GridCell.Tab.2.center" timestamp="1586761216760">
+    <state width="1864" height="331" key="GridCell.Tab.2.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682120" />
+    <state width="1864" height="331" key="GridCell.Tab.2.center" timestamp="1586927682119">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.2.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
-    <state width="1864" height="331" key="GridCell.Tab.2.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216760" />
-    <state width="1864" height="331" key="GridCell.Tab.2.left" timestamp="1586761216760">
+    <state width="1864" height="331" key="GridCell.Tab.2.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682119" />
+    <state width="1864" height="331" key="GridCell.Tab.2.left" timestamp="1586927682119">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.2.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
-    <state width="1864" height="331" key="GridCell.Tab.2.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216760" />
-    <state width="1864" height="331" key="GridCell.Tab.2.right" timestamp="1586761216761">
+    <state width="1864" height="331" key="GridCell.Tab.2.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682119" />
+    <state width="1864" height="331" key="GridCell.Tab.2.right" timestamp="1586927682120">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.2.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427116" />
-    <state width="1864" height="331" key="GridCell.Tab.2.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586761216761" />
+    <state width="1864" height="331" key="GridCell.Tab.2.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586927682120" />
     <state width="264" height="550" key="HiddenNamespacesPopup" timestamp="1585747906149">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -815,20 +817,20 @@
     </state>
     <state x="453" y="97" width="675" height="655" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585204064202" />
     <state x="2031" y="240" width="810" height="823" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586243064069" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1586778978967">
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1586930601749">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="292" y="99" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585811437713" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586778978967" />
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586930601749" />
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1583114089274">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586851688392">
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586910302409">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585889867176" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586851688392" />
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586910302409" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584186847007" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
@@ -854,6 +856,7 @@
     <SUITE FILE_PATH="coverage/Effective_Python$test.coverage" NAME="test Coverage Results" MODIFIED="1584192414291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
     <SUITE FILE_PATH="coverage/Effective_Python$tets.coverage" NAME="tets Coverage Results" MODIFIED="1585199947180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$19.coverage" NAME="19 Coverage Results" MODIFIED="1584876597647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Analyse_report.coverage" NAME="Analyse_report Coverage Results" MODIFIED="1586927675575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
     <SUITE FILE_PATH="coverage/Effective_Python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585473007026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
   </component>
 </project>

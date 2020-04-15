@@ -14,6 +14,7 @@ from sqlalchemy.dialects.oracle import \
     DOUBLE_PRECISION, FLOAT, INTERVAL, LONG, NCLOB, \
     NUMBER, NVARCHAR, NVARCHAR2, RAW, TIMESTAMP, VARCHAR, \
     VARCHAR2
+import time
 
 username1 = 'world'
 password1 = '1'
@@ -91,7 +92,15 @@ data_dq = pd.read_sql(sql_query, engine1)  # Step1 : read csv
 data_qs = pd.read_sql(sql_query1, engine1)  # Step1 : read csv
 data_sydq = pd.read_sql(sql_query2, engine1)  # Step1 : read csv
 
-#三种方法取值(后两种可规避重复值)
+
+#三种方法取值(后两种可规避重复值),将字符串常量转化为变量!
+kskm_list = ['科目一', '科目二', '科目三']
+for i, kskm_q in enumerate(kskm_list):
+    globals()['km' + str(i + 1) + '_dq'] = data_dq[(data_dq['kskm'] == kskm_q)]['hgl'].max() * 100
+    globals()['km'+str(i+1)+'_qs'] = data_qs[(data_qs['kskm'] == kskm_q)]['hgl'].max() * 100
+    globals()['km' + str(i + 1) + '_sydq']  = data_sydq[(data_sydq['kskm'] == kskm_q)]['hgl'].max() * 100
+
+#以上字符串常量动态的转化成变量替代如下程序：
 # km1 = data.loc[0, 'hgl'] * 100
 # km2 = data.loc[1, 'hgl'] * 100
 # km3 = data.loc[2, 'hgl'] * 100
@@ -100,17 +109,17 @@ data_sydq = pd.read_sql(sql_query2, engine1)  # Step1 : read csv
 # km2 = data[(data['kskm'] == '科目二')]['hgl'].iloc[0] * 100
 # km3 = data[(data['kskm'] == '科目三')]['hgl'].iloc[0] * 100
 
-km1_dq = data_dq[(data_dq['kskm'] == '科目一')]['hgl'].max() * 100
-km2_dq = data_dq[(data_dq['kskm'] == '科目二')]['hgl'].max() * 100
-km3_dq = data_dq[(data_dq['kskm'] == '科目三')]['hgl'].max() * 100
+# km1_dq = data_dq[(data_dq['kskm'] == '科目一')]['hgl'].max() * 100
+# km2_dq = data_dq[(data_dq['kskm'] == '科目二')]['hgl'].max() * 100
+# km3_dq = data_dq[(data_dq['kskm'] == '科目三')]['hgl'].max() * 100
 
-km1_qs = data_qs[(data_qs['kskm'] == '科目一')]['hgl'].max() * 100
-km2_qs = data_qs[(data_qs['kskm'] == '科目二')]['hgl'].max() * 100
-km3_qs = data_qs[(data_qs['kskm'] == '科目三')]['hgl'].max() * 100
+# km1_qs = data_qs[(data_qs['kskm'] == '科目一')]['hgl'].max() * 100
+# km2_qs = data_qs[(data_qs['kskm'] == '科目二')]['hgl'].max() * 100
+# km3_qs = data_qs[(data_qs['kskm'] == '科目三')]['hgl'].max() * 100
 
-km1_sydq = data_sydq[(data_sydq['kskm'] == '科目一')]['hgl'].max() * 100
-km2_sydq = data_sydq[(data_sydq['kskm'] == '科目二')]['hgl'].max() * 100
-km3_sydq = data_sydq[(data_sydq['kskm'] == '科目三')]['hgl'].max() * 100
+# km1_sydq = data_sydq[(data_sydq['kskm'] == '科目一')]['hgl'].max() * 100
+# km2_sydq = data_sydq[(data_sydq['kskm'] == '科目二')]['hgl'].max() * 100
+# km3_sydq = data_sydq[(data_sydq['kskm'] == '科目三')]['hgl'].max() * 100
 
 # 两种体现百分数的方法
 # print("吉林地区各科目整体平均合格率:%s,%s,%s" % (str(round(Decimal(km1),2)) + '%', str(round(Decimal(km2),2)) + '%', str(round(Decimal(km3),2)) + '%'))
@@ -120,4 +129,44 @@ print("本月地区与省平均值各科目整体平均合格率差:%s,%s,%s" % 
 print("本月与上月地区各科目整体平均合格率环比:%s,%s,%s" % (str('{:.2f}'.format(km1_dq-km1_sydq)) + '%', str('{:.2f}'.format(km2_dq-km2_sydq)) + '%', str('{:.2f}'.format(km3_dq-km3_sydq)) + '%'))
 
 ###2.列出高于全省平均值考场的名称及高于值
+#注意SQL语句中带引号的参数值一定加上\'{}\'转义符不带引号的表格名称等不要加！！！！！
+
+def query_kcmc(year_month=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())[0:7]+'-__',kskm_query='科目一',kmz=1):
+
+
+    year_month = year_month+'-__'
+    data_query_kcmc = pd.read_sql("select * from LS_JSRKSHGL t "
+                                 "WHERE to_char(t.scyf,'yyyy-MM-dd') like \'{}\'  "
+                                 "AND  t.xm not IN('吉林地区平均值','全省平均值') "
+                                 "AND t.kskm LIKE \'{}\' "
+                                 "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M'), t.hgl DESC".format(year_month,kskm_query),engine1)
+    temp = data_query_kcmc[['xm', 'hgl']].drop_duplicates()
+    temp['qs_cha'] = temp.apply(lambda x: (x.hgl * 100 - kmz), axis=1)  # 取出值
+    temp['hgl'] = temp.apply(lambda x: (x.hgl * 100), axis=1)
+    return (temp)
+
+#显示所有列
+pd.set_option('display.max_columns', None)
+#显示所有行
+pd.set_option('display.max_rows', None)
+#设置value的显示长度为100，默认为50
+pd.set_option('max_colwidth',100)
+pd.set_option('display.unicode.ambiguous_as_wide', True)
+pd.set_option('display.unicode.east_asian_width', True)
+pd.set_option('display.width',180) # 设置打印宽度(**重要**)
+pd.set_option('expand_frame_repr', False) #数据超过总宽度后，是否折叠显示
+
+# wd = query_kcmc('2020-01','科目一',km1_qs)
+# print(wd)
+# wd = query_kcmc('2020-01','科目二',km2_qs)
+# print(wd)
+# wd = query_kcmc('2020-01','科目三',km3_qs)
+# print(wd)
+
+
+
+for i, kskm_q in enumerate(kskm_list):
+    wd = query_kcmc('2020-01', kskm_q, globals()['km' + str(i + 1) + '_qs'])
+    print(wd)
+
 
