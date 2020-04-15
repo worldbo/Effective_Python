@@ -73,7 +73,7 @@ ncols = data.shape[1]
 # print(data6.drop_duplicates().unstack())
 
 
-###查询相关表格并按照报告顺序内容给出相应数据！！！
+###第一部分、查询相关表格并按照报告顺序内容给出相应数据！！！
 ###1、列出地区与全省各科值，以及环比、同比情况：
 
 sql_query = "select * from LS_JSRKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
@@ -83,7 +83,7 @@ sql_query1 = "select * from LS_JSRKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
             "like '2020-01-__' and t.xm like '全省平均值' " \
             "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；本月省
 sql_query2 = "select * from LS_JSRKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
-            "like '2019-12-__' and t.xm like '吉林地区平均值' " \
+            "like '2020-01-__' and t.xm like '吉林地区平均值' " \
             "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；上月地区
 
 
@@ -170,3 +170,67 @@ for i, kskm_q in enumerate(kskm_list):
     print(wd)
 
 
+#3、异地考试合格率情况分析：
+
+sql_query_yd = "select * from LS_JSRYDKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
+            "like '2020-01-__' and t.xm like '吉林地区平均值' " \
+            "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；本月地区异地
+sql_query1_yd = "select * from LS_JSRYDKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
+            "like '2020-01-__' and t.xm like '全省平均值' " \
+            "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；本月省异地
+sql_query2_yd = "select * from LS_JSRYDKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
+            "like '2019-12-__' and t.xm like '吉林地区平均值' " \
+            "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；上月地区异地
+sql_query3_yd = "select * from LS_JSRYDKSHGL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
+            "like '2019-12-__' and t.xm like '全省平均值' " \
+            "ORDER BY NLSSORT(t.kskm,'NLS_SORT = SCHINESE_STROKE_M')"  # 按照指定列汉字笔画排序 desc/asce；上月全省异地
+
+data_dq_yd = pd.read_sql(sql_query_yd, engine1)  # Step1 : read csv
+data_qs_yd = pd.read_sql(sql_query1_yd, engine1)  # Step1 : read csv
+data_sydq_yd = pd.read_sql(sql_query2_yd, engine1)  # Step1 : read csv
+data_syqs_yd = pd.read_sql(sql_query3_yd, engine1)  # Step1 : read csv
+
+ydkm3_dq = data_dq_yd[(data_dq_yd['kskm'] == '科目三')]['hgl'].max() * 100
+ydkm3_qs = data_qs_yd[(data_qs_yd['kskm'] == '科目三')]['hgl'].max() * 100
+ydkm3_sydq = data_sydq_yd[(data_sydq_yd['kskm'] == '科目三')]['hgl'].max() * 100
+ydkm3_syqs = data_syqs_yd[(data_syqs_yd['kskm'] == '科目三')]['hgl'].max() * 100
+
+print("吉林地区异地科目三整体平均合格率:%s" % (str('{:.2f}'.format(ydkm3_dq)) + '%'))
+print("全省异地科目三整体平均合格率:%s" % (str('{:.2f}'.format(ydkm3_qs)) + '%'))
+print("本月地区异地科目三与省平均值整体平均合格率差:%s" % (str('{:.2f}'.format(ydkm3_dq-ydkm3_qs)) + '%'))
+print("本月与上月地区异地科目三整体平均合格率环比:%s" % (str('{:.2f}'.format(ydkm3_dq-ydkm3_sydq)) + '%'))
+print("本月与上月全省异地科目三整体平均合格率环比:%s" % (str('{:.2f}'.format(ydkm3_qs-ydkm3_syqs)) + '%'))
+
+
+###第二部分、预警情况：
+#4、科目二场地驾驶技能考试超出考试能力预警情况分析：
+
+sql_query_nl = "select * from LS_KM2CCKSNL t WHERE to_char(t.scyf,'yyyy-MM-dd') " \
+               "like '2019-12-__'ORDER BY to_char(t.ksrq,'yyyy-MM-dd') ASC"  # 本月科目二场地驾驶技能考试超出考试能力
+data_dq_nl = pd.read_sql(sql_query_nl, engine1)  # Step1 : read csv
+
+#产生预警信息考场信息：
+data_dq_nlkc = data_dq_nl[['kcmc','ksrq','yjzb']]
+print('产生超出考试能力预警信息考场共：%s个，它们分别为：'%(data_dq_nlkc[['kcmc']].drop_duplicates().shape[0]))
+print(data_dq_nlkc[['kcmc']].drop_duplicates())
+
+print('产生超出考试能力预警信息考场所涉及场次日期如下表：')
+print(data_dq_nlkc.pivot(index='kcmc',columns='ksrq',values='yjzb'))
+
+
+#5、考试过程异常预警方面情况：
+#（1）、重点扣分项
+#（2）、考试时间过短
+#（3）、考试时间过长
+#（4）、设备重叠
+#（5）、考试成绩不一致
+#（6）、考试过程异常预警数据综合分析：
+
+
+#6、考试员合格率情况：
+
+
+#7、考试员合格率情况：
+
+
+#8、综合分析，重点发现问题考场：

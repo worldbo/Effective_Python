@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pydata-book/Analyse_report_all.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pydata-book/Analyse_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/Analyse_report.py" afterDir="false" />
     </list>
@@ -64,7 +63,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Python.Analyse_report_all">
+  <component name="RunManager" selected="Python.Analyse_report">
     <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,6 +87,9 @@
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -193,8 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Analyse_report_all" />
         <item itemvalue="Python.Analyse_report" />
+        <item itemvalue="Python.Analyse_report_all" />
         <item itemvalue="Python.Oracle_table2table_all2" />
         <item itemvalue="Python.Oracle_table2table2" />
         <item itemvalue="Python.select_test" />
@@ -273,21 +275,8 @@
       <workItem from="1586757134666" duration="7086000" />
       <workItem from="1586778533642" duration="8793000" />
       <workItem from="1586851482335" duration="14802000" />
-      <workItem from="1586910281840" duration="17442000" />
-    </task>
-    <task id="LOCAL-00014" summary="第二章：在page28">
-      <created>1583480484458</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1583480484458</updated>
-    </task>
-    <task id="LOCAL-00015" summary="第十三条：在page27">
-      <created>1583484680392</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1583484680392</updated>
+      <workItem from="1586910281840" duration="20068000" />
+      <workItem from="1586954750376" duration="5379000" />
     </task>
     <task id="LOCAL-00016" summary="第十三条：在page27">
       <created>1583484708498</created>
@@ -618,7 +607,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586873417399</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="最终版（无中间过程）">
+      <created>1586930593647</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1586930593648</updated>
+    </task>
+    <task id="LOCAL-00064" summary="继续有过程的">
+      <created>1586930655303</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1586930655303</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,8 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第八条：在page18" />
-    <MESSAGE value="第五条：在page10" />
     <MESSAGE value="第九条：在page18" />
     <MESSAGE value="第十条：在page20" />
     <MESSAGE value="第十三条：在page27" />
@@ -693,7 +694,9 @@
     <MESSAGE value="增加合格率等统计表格" />
     <MESSAGE value="增加合格率等统计表格!!!" />
     <MESSAGE value="2.列出高于全省平均值考场的名称及高于值" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.列出高于全省平均值考场的名称及高于值" />
+    <MESSAGE value="最终版（无中间过程）" />
+    <MESSAGE value="继续有过程的" />
+    <option name="LAST_COMMIT_MESSAGE" value="继续有过程的" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -704,11 +707,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586930591017">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586930652684">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586930591017" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586930652684" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -826,11 +829,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586910302409">
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586954750402">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585889867176" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586910302409" />
+    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586954750402" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584186847007" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
