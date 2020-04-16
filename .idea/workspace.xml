@@ -61,7 +61,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Python.Analyse_report">
     <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -276,14 +276,8 @@
       <workItem from="1586778533642" duration="8793000" />
       <workItem from="1586851482335" duration="14802000" />
       <workItem from="1586910281840" duration="20068000" />
-      <workItem from="1586954750376" duration="5379000" />
-    </task>
-    <task id="LOCAL-00016" summary="第十三条：在page27">
-      <created>1583484708498</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1583484708498</updated>
+      <workItem from="1586954750376" duration="5737000" />
+      <workItem from="1587026112542" duration="9677000" />
     </task>
     <task id="LOCAL-00017" summary="第二章：在page28">
       <created>1583484947972</created>
@@ -621,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586930655303</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="继续有过程的">
+      <created>1586960171896</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1586960171897</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,11 +708,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586930652684">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1586960169156">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586930652684" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586960169156" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -810,10 +811,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="598" y="88" key="RollbackChangesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583225975633" />
-    <state x="185" y="0" key="SettingsEditor" timestamp="1584042759599">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1822" y="0" key="SettingsEditor" timestamp="1586960489831">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583239601300" />
+    <state x="1822" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586960489831" />
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584042759599" />
     <state x="2031" y="240" width="810" height="823" key="StructurePopup" timestamp="1586243064069">
       <screen x="1600" y="0" width="1920" height="1080" />
@@ -829,11 +831,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586954750402">
+    <state x="2042" y="324" key="com.intellij.ide.util.TipDialog" timestamp="1587026207085">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585889867176" />
-    <state x="2042" y="345" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586954750402" />
+    <state x="2042" y="324" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587026207085" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584186847007" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
