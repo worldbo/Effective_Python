@@ -200,6 +200,8 @@ ydkm3_qs = data_qs_yd[(data_qs_yd['kskm'] == '科目三')]['hgl'].max() * 100
 ydkm3_sydq = data_sydq_yd[(data_sydq_yd['kskm'] == '科目三')]['hgl'].max() * 100
 ydkm3_syqs = data_syqs_yd[(data_syqs_yd['kskm'] == '科目三')]['hgl'].max() * 100
 
+##直接在dataframe相应列中一次性改成百分数：dataframe名称.style.format({'相应列': '{0:.2%}'.format})
+
 print("吉林地区异地科目三整体平均合格率:%s" % (str('{:.2f}'.format(ydkm3_dq)) + '%'))
 print("全省异地科目三整体平均合格率:%s" % (str('{:.2f}'.format(ydkm3_qs)) + '%'))
 print("本月地区异地科目三与省平均值整体平均合格率差:%s" % (str('{:.2f}'.format(ydkm3_dq - ydkm3_qs)) + '%'))
@@ -258,16 +260,21 @@ pd.set_option('max_colwidth', 512)
 print('地区本月产生考试异常情况所涉及场次日期如下表：')
 bgdata_dq_ycqctj = data_dq_ycqctj.pivot(index='kcmc', columns='ksrq', values='ycqk')
 # print(tuple(bgdata_dq_ycqctj.index))
-
+res1 = []
+res2 = []
 for i, temp in enumerate(tuple(bgdata_dq_ycqctj.columns)):
     if temp != None:
-        print(temp,  end='：')  # 打印列表不换行！！！end='，'分隔
+        print(temp, end='：')  # 打印列表不换行！！！end='，'分隔
+        res1.append(temp)
         for i, temp1 in enumerate(bgdata_dq_ycqctj[temp].fillna('Null').values):  # 对字符串向对nan先填入特征值'Null'
             # if math.isnan(temp1):     #对纯数值有效，在之前不用去除。
             if temp1 != 'Null':  # 对特征值'Null'去除。
                 print(temp1, end='\n')
+                res2.append(temp1)
 
 # 统计ycqk中的无%音视频%；没有车辆备案；监管中无三类等所涉及的考场名称：
+print(res2,end='\n')
+print(dict(zip(res1,res2)))
 
 
 # 6、考试过程异常预警方面情况：

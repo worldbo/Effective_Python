@@ -275,14 +275,7 @@
       <workItem from="1586910281840" duration="20068000" />
       <workItem from="1586954750376" duration="5737000" />
       <workItem from="1587026112542" duration="9783000" />
-      <workItem from="1587102563244" duration="19823000" />
-    </task>
-    <task id="LOCAL-00018" summary="第二章：在page30">
-      <created>1583556016107</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1583556016108</updated>
+      <workItem from="1587102563244" duration="21055000" />
     </task>
     <task id="LOCAL-00019" summary="第二章：在page30">
       <created>1583556040299</created>
@@ -620,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587042068968</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="继续有过程的">
+      <created>1587135258058</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1587135258058</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,11 +706,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1587042066158">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1587135255318">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587042066158" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587135255318" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
