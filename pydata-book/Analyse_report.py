@@ -1,6 +1,9 @@
 # 本程序依据总队考试监管通报总队考试监管通报内容进行数据完善
 
 from decimal import Decimal
+from functools import reduce
+from itertools import chain
+import math
 import xlrd
 import xlwt
 from re import sub
@@ -239,18 +242,32 @@ print('\n')
 data_dq_ycqctj = data_dq_ycqk[['kcmc', 'ksrq', 'ycqk']]
 print('地区本月产生考试异常情况预警信息的考场共：%s个，它们分别为：' % (data_dq_nlkc[['kcmc']].drop_duplicates().shape[0]))
 
-zfdata_dq_ycqctj = (data_dq_ycqctj[['kcmc']].drop_duplicates()).values.tolist()
+zfdata_dq_ycqctj = ((data_dq_ycqctj[['kcmc']].drop_duplicates()).values.tolist())
+# zfdata_dq_ycqctj = list(chain.from_iterable((data_dq_ycqctj[['kcmc']].drop_duplicates()).values.tolist()))
+# print("".join(zfdata_dq_ycqctj))
+res = []
 for i, temp in enumerate(zfdata_dq_ycqctj):
-    print(zfdata_dq_ycqctj[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+    if temp != [None]:
+        res.append(temp)
+        print(res[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+# print(zfdata_dq_ycqctj[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+
 print('\n')
-#
+# #利用list（）和tuple（）配合.index与.columns以及.values取出相应值。
 pd.set_option('max_colwidth', 512)
 print('地区本月产生考试异常情况所涉及场次日期如下表：')
-print(data_dq_ycqctj.pivot(index='kcmc', columns='ksrq', values='ycqk'))
+bgdata_dq_ycqctj = data_dq_ycqctj.pivot(index='kcmc', columns='ksrq', values='ycqk')
+# print(tuple(bgdata_dq_ycqctj.index))
 
-#统计ycqk中的无%音视频%；没有车辆备案；监管中无三类等所涉及的考场名称：
+for i, temp in enumerate(tuple(bgdata_dq_ycqctj.columns)):
+    if temp != None:
+        print(temp,  end='：')  # 打印列表不换行！！！end='，'分隔
+        for i, temp1 in enumerate(bgdata_dq_ycqctj[temp].fillna('Null').values):  # 对字符串向对nan先填入特征值'Null'
+            # if math.isnan(temp1):     #对纯数值有效，在之前不用去除。
+            if temp1 != 'Null':  # 对特征值'Null'去除。
+                print(temp1, end='\n')
 
-
+# 统计ycqk中的无%音视频%；没有车辆备案；监管中无三类等所涉及的考场名称：
 
 
 # 6、考试过程异常预警方面情况：
