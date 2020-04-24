@@ -1,11 +1,19 @@
 # 本程序依据总队考试监管通报总队考试监管通报内容进行数据完善
+# 清洗数据：a.读入数据；b.数据预览；c.检查NULL值；d.补全空值；e.特征工程；f.编码；g.再check；
+# 数据分析与挖掘：数据探索（质量分析、特征分析）、数据预处理（清洗、集成、变换、规约）、挖掘建模
+# （分类预测、聚类分析、关联规则、时序分析、离群点检测）
+
 
 from decimal import Decimal
 from functools import reduce
 from itertools import chain
+import logging
+import textwrap
+from pprint import pprint
 import math
 import xlrd
 import xlwt
+import re
 from re import sub
 import numpy as np
 import pandas as pd
@@ -23,6 +31,36 @@ username1 = 'world'
 password1 = '1'
 host_port1 = 'localhost:1521'
 database1 = 'ORCL'
+sql_query_data = '2020-01'
+#科目二扣分代码：
+km2kfdm = [10000,10100,10101,10102,10103,10104,10105,10106,10107,10108,10109,
+           10110,10111,10112,10113,10114,10115,10116,10117,10118,10119,10120,
+           10121,10122,10123,10124,10125,10126,10200,10201,10202,10203,10204,
+           10205,10206,10207,10208,10209,10210,10211,20000,20100,20101,20102,
+           20103,20104,20105,20106,20200,20201,20202,20203,20204,20205,20206,
+           20300,20301,20302,20303,20304,20305,20306,20400,20401,20402,20403,
+           20404,20405,20406,20500,20501,20502,20503,20600,20601,20602,20603,
+           20700,20701,20702,20703,20800,20801,20802,20803,20900,20901,20902,
+           20903,20904,20905,21000,21001,21002,21003,21100,21101,21102,21103,
+           21200,21201,21202,21203,21204,21300,21301,21302,21303,21304,21400,
+           21401,21402,21403,21404,21500,21501,21502,21600,21601,21602,21603,
+           21700,21701,21702,21800,21801,21802,21803,21804,21805]
+#科目三扣分代码：
+km3kfdm = [30000,30100,30101,30102,30103,30104,30105,30106,30107,30108,30109,
+           30110,30111,30112,30113,30114,30115,30116,30117,30118,30119,30120,
+           30121,30122,30123,30124,30125,30126,30127,30128,30129,30130,30131,
+           30132,30133,30134,30135,30136,30200,30201,30202,30203,30204,30205,
+           30206,30207,30208,30209,30210,30211,40000,40100,40101,40102,40200,
+           40201,40202,40203,40204,40205,40206,40207,40208,40209,40210,40211,
+           40300,40301,40302,40303,40304,40400,40401,40402,40500,40501,40502,
+           40503,40600,40601,40602,40603,40604,40605,40606,40607,40608,40609,
+           40610,40700,40701,40702,40703,40704,40800,40801,40802,40803,40804,
+           40805,40900,40901,40902,40903,40904,41000,41001,41002,41003,41100,
+           41101,41102,41103,41200,41201,41202,41203,41300,41301,41302,41303,
+           41400,41401,41402,41403,41404,41405,41406,41407,41500,41501,41502,
+           41503,41504,41600,41601,41602,41603,41604,41605,41606,41607,41608,
+           41609,41700,41701,41702,41703,41704,41705,41706,41707,41708,41709]
+
 
 database1_Tables = ['JSRKSHGL', 'ksyhgl', 'jsrydkshgl', 'km2ccksnl', 'ksycqk', 'km2ycshzb', 'ksxmkf']  # total seven
 database1_Tables = [item.upper() for item in
@@ -252,14 +290,14 @@ for i, temp in enumerate(zfdata_dq_ycqctj):
     if temp != [None]:
         res.append(temp)
         print(res[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
-# print(zfdata_dq_ycqctj[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+print(zfdata_dq_ycqctj[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
 
 print('\n')
 # #利用list（）和tuple（）配合.index与.columns以及.values取出相应值。
 pd.set_option('max_colwidth', 512)
-print('地区本月产生考试异常情况所涉及场次日期如下表：')
+print('地区本月产生考试异常情况所涉及场次日期如下：')
 bgdata_dq_ycqctj = data_dq_ycqctj.pivot(index='kcmc', columns='ksrq', values='ycqk')
-# print(tuple(bgdata_dq_ycqctj.index))
+# pprint(tuple(bgdata_dq_ycqctj.index),width=80)
 res1 = []
 res2 = []
 for i, temp in enumerate(tuple(bgdata_dq_ycqctj.columns)):
@@ -269,27 +307,62 @@ for i, temp in enumerate(tuple(bgdata_dq_ycqctj.columns)):
         for i, temp1 in enumerate(bgdata_dq_ycqctj[temp].fillna('Null').values):  # 对字符串向对nan先填入特征值'Null'
             # if math.isnan(temp1):     #对纯数值有效，在之前不用去除。
             if temp1 != 'Null':  # 对特征值'Null'去除。
-                print(temp1, end='\n')
+                print(textwrap.dedent(textwrap.fill(temp1, width=32)), end='\n')  # 采用textwrap.fill和.dedent解决字符串过长问题
                 res2.append(temp1)
 
 # 统计ycqk中的无%音视频%；没有车辆备案；监管中无三类等所涉及的考场名称：
-print(res2,end='\n')
-print(dict(zip(res1,res2)))
+# print(res2,end='\n')
+# print(dict(zip(res1,res2)))
 
 
 # 6、考试过程异常预警方面情况：
-# （1）、重点扣分项
+# （1）、重点扣分项（考试项目扣分表以及重点扣分项目）
+sql_query_xmkf = "SELECT * from LS_KSXMKF t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
+                 " like '2020-01-__'ORDER BY t.ksxm ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_xmkf = pd.read_sql(sql_query_xmkf, engine1)  # Step1 : read csv
+print('\n')
+data_dq_xmkftj = data_dq_xmkf[['kcmc', 'ksxm', 'kscs']]
+print('地区本月产生考试项目扣分表情况预警统计信息的考场共：%s个，'
+      '它们分别为：' % (data_dq_xmkf[['kcmc']].drop_duplicates().shape[0]), end='\n')
+zfdata_dq_xmkftj = list(chain.from_iterable((data_dq_xmkftj[['kcmc']].drop_duplicates()).values.tolist()))
+print(",".join(zfdata_dq_xmkftj), end='\n')
+print(data_dq_xmkftj)
+#
+print('产生预警信息考场所涉及考试项目扣分为零判以及其此项目考试人数如下表：')
+print(pd.pivot_table(data_dq_xmkftj, index='kcmc', columns='ksxm',
+                     values='kscs').rename({'kcmc': '考场名称', 'ksxm': '考试项目'}, axis=1))
+###重点扣分项
+# 清洗数据：a.读入数据；b.数据预览；c.检查NULL值；d.补全空值；e.特征工程；f.编码；g.再check；
+# 数据分析与挖掘：数据探索（质量分析、特征分析）、数据预处理（清洗、集成、变换、规约）、挖掘建模
+# （分类预测、聚类分析、关联规则、时序分析、离群点检测）
+sql_query_zdkfx = "SELECT * from ZDKFX_LS t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
+                  " like '2020-01-__'ORDER BY t.KSRQ ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_zdkfx = pd.read_sql(sql_query_zdkfx, engine1)  # Step1 : read csv
+print('\n')
+# data_dq_zdkfx.kskm[data_dq_zdkfx['kcmc'] == '吉林市吉松鸿利科目三考场'] = '科目三'  # 对相应项进行修改
+# data_dq_zdkfx.kskm[data_dq_zdkfx['kcmc'].str.contains('科目三')] = '科目三'
+# data_dq_zdkfx['kskm'] = '科目二'
+
+data_dq_zdkfx['kskm'] = '科目三'
+data_dq_zdkfx.kskm[data_dq_zdkfx['kcmc'].str.contains('科目二')] = '科目二'
+
+print(data_dq_zdkfx)
+# 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
+for id,temp in enumerate(data_dq_zdkfx['yjms']):
+    print(id,temp,end='\n')
+#利用正则表达式解决
+
+
+
+
+
+
 # （2）、考试时间过短
 # （3）、考试时间过长
 # （4）、设备重叠
 # （5）、考试成绩不一致
 # （6）、考试过程异常预警数据综合分析：
 
-
 # 7、考试员合格率情况：
 
-
-# 8、考试员合格率情况：
-
-
-# 9、综合分析，重点发现问题考场：
+# 8、综合分析，重点发现问题考场：
