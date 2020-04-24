@@ -350,7 +350,8 @@ print(data_dq_zdkfx)
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id,temp in enumerate(data_dq_zdkfx['yjms']):
     print(id,temp,end='\n')
-#利用正则表达式解决
+#利用正则表达式提取各考场无记录的重点扣分项，并对比考场性质进行数据清洗。
+
 
 
 
