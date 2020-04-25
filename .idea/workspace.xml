@@ -291,14 +291,7 @@
       <workItem from="1587640670664" duration="2153000" />
       <workItem from="1587690019579" duration="3813000" />
       <workItem from="1587731304387" duration="1875000" />
-      <workItem from="1587798624054" duration="7188000" />
-    </task>
-    <task id="LOCAL-00022" summary="第二章：在page37">
-      <created>1583658761832</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1583658761832</updated>
+      <workItem from="1587798624054" duration="10268000" />
     </task>
     <task id="LOCAL-00023" summary="第二章：在page37">
       <created>1583663930189</created>
@@ -636,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587700799279</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="修改的了扣分代码">
+      <created>1587805992281</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1587805992282</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第九条：在page18" />
     <MESSAGE value="第十条：在page20" />
     <MESSAGE value="第十三条：在page27" />
     <MESSAGE value="第二章：在page28" />
@@ -711,7 +710,8 @@
     <MESSAGE value="2.列出高于全省平均值考场的名称及高于值" />
     <MESSAGE value="最终版（无中间过程）" />
     <MESSAGE value="继续有过程的" />
-    <option name="LAST_COMMIT_MESSAGE" value="继续有过程的" />
+    <MESSAGE value="修改的了扣分代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改的了扣分代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -722,11 +722,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1587700796818">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1587805989615">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587700796818" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587805989615" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />

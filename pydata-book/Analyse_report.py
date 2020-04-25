@@ -47,10 +47,10 @@ km2kfdm = [10000, 10100, 10101, 10102, 10103, 10104, 10105, 10106, 10107, 10108,
            21401, 21402, 21403, 21404, 21500, 21501, 21502, 21600, 21601, 21602, 21603,
            21700, 21701, 21702, 21800, 21801, 21802, 21803, 21804, 21805]
 # 科目二小型车扣分代码：
-km2kfdm_xxc = [10101, 10102, 10103, 10104, 10105, 10106, 10107, 10108, 10109,10110, 10111,
-               10112, 10113, 10114, 10115, 10116, 10117, 10118, 10119, 10120,10121, 10122,
+km2kfdm_xxc = [10101, 10102, 10103, 10104, 10105, 10106, 10107, 10108, 10109, 10110, 10111,
+               10112, 10113, 10114, 10115, 10116, 10117, 10118, 10119, 10120, 10121, 10122,
                10125, 10126, 10200, 10201, 10202, 10203, 10204, 10205, 10206, 10207, 10208,
-               10209, 10210, 10211, 20101, 20102,20103, 20104,  20105, 20106, 20301, 20302,
+               10209, 10210, 10211, 20101, 20102, 20103, 20104, 20105, 20106, 20301, 20302,
                20303, 20304, 20305, 20306, 20401, 20402, 20403, 20404, 20405, 20406, 20601,
                20602, 20603, 20701, 20702, 20703]
 # 科目二大型车扣分代码
@@ -367,7 +367,7 @@ print('\n')
 data_dq_zdkfx['kskm'] = '科目三'
 data_dq_zdkfx.kskm[data_dq_zdkfx['kcmc'].str.contains('科目二')] = '科目二'
 
-print(data_dq_zdkfx)
+print(data_dq_zdkfx.sort_values('kskm'))
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id, temp in enumerate(data_dq_zdkfx['yjms']):
     # print(id,temp,end='\n')
@@ -380,17 +380,34 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
     # print(keyworld_wkfjl.span()[0])
     # print('输出%s行：' % id, temp[keyworld_zdkf.span()[1] + 1:keyworld_wkfjl.span()[0]], end='\n')
     kfx = (temp[keyworld_zdkf.span()[1] + 1:keyworld_wkfjl.span()[0]]).split(",")
-    # print(kfx, end='\n')
-    kfdm_res1 = []
+    # print(kfx, end='\n')     #原扣分项目
+    print('\n')
+    km2kfdm_res1 = []
+    km2kfdm_res2 = []
+
+    km3kfdm_res1 = []
+    km3kfdm_res2 = []
+
     # zhkm2kfdm_xxc = list(map(str,km2kfdm_xxc))
     # print(zhkm2kfdm_xxc)
-    for temp_kfda in kfx:  # 过滤扣分代码
-        if temp_kfda in list(map(str, km2kfdm_xxc)):
-            kfdm_res1.append(temp_kfda)
-    print('输出%s行,过滤后的该考场扣分代码为：' % id, kfdm_res1, end='\n')
+    if data_dq_zdkfx.loc[id, 'kskm'] == '科目二':
+        for temp_kfda in kfx:  # 过滤扣分代码
+            if temp_kfda in list(map(str, km2kfdm_xxc)):
+                km2kfdm_res1.append(temp_kfda)
+            else:
+                km2kfdm_res2.append(temp_kfda)
 
+        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res1, end='\n')
+        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res2, end='\n')
+    else:
+        for temp_kfda in kfx:  # 过滤扣分代码
+            if temp_kfda in list(map(str, km3kfdm)):
+                km3kfdm_res1.append(temp_kfda)
+            else:
+                km3kfdm_res2.append(temp_kfda)
 
-
+        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res1, end='\n')
+        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
 
 
 
