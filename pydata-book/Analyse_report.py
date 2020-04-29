@@ -30,7 +30,6 @@ import time
 from datetime import datetime
 from matplotlib import pyplot as plt
 
-
 username1 = 'world'
 password1 = '1'
 host_port1 = 'localhost:1521'
@@ -86,13 +85,12 @@ km3kfdm = [30000, 30100, 30101, 30102, 30103, 30104, 30105, 30106, 30107, 30108,
            41503, 41504, 41600, 41601, 41602, 41603, 41604, 41605, 41606, 41607, 41608,
            41609, 41700, 41701, 41702, 41703, 41704, 41705, 41706, 41707, 41708, 41709]
 
-#科目二系统提供商与考场名称:
-km2ksxt_kcmc = {'吉林市九新科目二分考场':'安徽三联交通应用技术股份有限公司','吉林市吉利科目二分考场':'安徽三联交通应用技术股份有限公司'}
+# 科目二系统提供商与考场名称:
+km2ksxt_kcmc = {'吉林市九新科目二分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉利科目二分考场': '安徽三联交通应用技术股份有限公司'}
 
-#科目三系统提供航与考场名称:
-km3ksxt_kcmc = {'吉林市九新江城科目三分考场':'安徽三联交通应用技术股份有限公司','吉林市吉凇鸿利科目三分考场':'安徽三联交通应用技术股份有限公司',
-                '吉林市交警支队科目三分考场':'安徽三联交通应用技术股份有限公司','吉林市舒兰蓝盾科目三分考场':'安徽三联交通应用技术股份有限公司'}
-
+# 科目三系统提供航与考场名称:
+km3ksxt_kcmc = {'吉林市九新江城科目三分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉凇鸿利科目三分考场': '安徽三联交通应用技术股份有限公司',
+                '吉林市交警支队科目三分考场': '安徽三联交通应用技术股份有限公司', '吉林市舒兰蓝盾科目三分考场': '安徽三联交通应用技术股份有限公司'}
 
 database1_Tables = ['JSRKSHGL', 'ksyhgl', 'jsrydkshgl', 'km2ccksnl', 'ksycqk', 'km2ycshzb', 'ksxmkf']  # total seven
 database1_Tables = [item.upper() for item in
@@ -391,7 +389,6 @@ print('\n')
 print('涉及考试系统设备厂商家家，如下：')
 print(data_dq_zdkfx[['kcmc']].drop_duplicates().count())
 
-
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id, temp in enumerate(data_dq_zdkfx['yjms']):
     # print(id,temp,end='\n')
@@ -433,12 +430,28 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
         print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res1, end='\n')
         print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
 
-
-data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')  #直接更改列数值类型
+data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')  # 直接更改列数值类型
 print(data_dq_zdkfx['ksrq'].dtypes)
-data_dq_zdkfx.reset_index()            #设置索引必须先复位再设置。
-data_dq_zdkfx.set_index('ksrq')        #重新索引后补重新回赋不改变原索引的dataframe
-print(data_dq_zdkfx.set_index('ksrq')[:'2020-01-10'])
+data_dq_zdkfx.reset_index()  # 设置索引必须先复位再设置。
+data_dq_zdkfx.set_index('ksrq')  # 重新索引后补重新回赋不改变原索引的dataframe
+print(data_dq_zdkfx.set_index('ksrq')[:'2020-01-10'], end='\n')  # 查询指定天数前的日期
+
+print('无重点扣分项涉及日期共%s天。' % (data_dq_zdkfx[['ksrq']].drop_duplicates().shape[0]))
+print('无重点扣分项涉及具体日期,如下表：')
+print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
+
+# mm = data_dq_zdkfx[['ksrq']].drop_duplicates()
+#
+# dates = pd.to_datetime(pd.Series(mm['ksrq'].to_list()), format='%Y-%m-%d %H:%M:%S')
+#
+# print('返回日期值:\n', dates.dt.date)
+# print('返回季度：\n', dates.dt.quarter)
+# print('返回几点钟: \n', dates.dt.hour)
+# print('返回年中的天: \n', dates.dt.dayofyear)
+# print('返回年中的周：\n', dates.dt.weekofyear)
+# print('返回星期几的名称：\n', dates.dt.weekday)
+# print('返回月份的天数：\n',dates.dt.days_in_month)
+
 
 
 
