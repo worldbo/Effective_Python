@@ -434,7 +434,7 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
         print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
 
 
-data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')
+data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')  #直接更改列数值类型
 print(data_dq_zdkfx['ksrq'].dtypes)
 data_dq_zdkfx.reset_index()            #设置索引必须先复位再设置。
 data_dq_zdkfx.set_index('ksrq')        #重新索引后补重新回赋不改变原索引的dataframe
