@@ -307,14 +307,8 @@
       <workItem from="1588659664284" duration="9454000" />
       <workItem from="1588724673701" duration="4983000" />
       <workItem from="1588750415977" duration="1792000" />
-      <workItem from="1588764745381" duration="7447000" />
-    </task>
-    <task id="LOCAL-00027" summary="第二十条：page46">
-      <created>1584876721343</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1584876721343</updated>
+      <workItem from="1588764745381" duration="7487000" />
+      <workItem from="1588772445332" duration="2886000" />
     </task>
     <task id="LOCAL-00028" summary="第二十条：page46">
       <created>1584876740611</created>
@@ -652,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588170108997</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="修改的了扣分代码">
+      <created>1588772254106</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1588772254108</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,11 +739,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1588170106436">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1588775342862">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1588170106436" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1588775342862" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -861,11 +862,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2143" y="314" key="com.intellij.ide.util.TipDialog" timestamp="1588764755404">
+    <state x="2143" y="314" key="com.intellij.ide.util.TipDialog" timestamp="1588772452948">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1587690031214" />
-    <state x="2143" y="314" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1588764755404" />
+    <state x="2143" y="314" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1588772452948" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1587640676038" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
