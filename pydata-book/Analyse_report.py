@@ -29,6 +29,12 @@ from sqlalchemy.dialects.oracle import \
 import time
 from datetime import datetime
 from matplotlib import pyplot as plt
+import difflib
+
+
+def get_equal_rate(str1, str2):
+    return difflib.SequenceMatcher(None, str1, str2).quick_ratio()
+
 
 username1 = 'world'
 password1 = '1'
@@ -378,16 +384,43 @@ data_dq_zdkfx.kskm[data_dq_zdkfx['kcmc'].str.contains('科目二')] = '科目二
 
 print(data_dq_zdkfx.sort_values('kskm'))
 print('无重点扣分项涉及考场共%s家。如下：' % (data_dq_zdkfx[['kcmc']].drop_duplicates().shape[0]))
-zfdata_dq_zdkfx = ((data_dq_zdkfx[['kcmc']].drop_duplicates()).values.tolist())
-res = []
-for i, temp in enumerate(zfdata_dq_zdkfx):
-    if temp != [None]:
-        res.append(temp)
-        print(res[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
-print(zfdata_dq_zdkfx[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
-print('\n')
+# zfdata_dq_zdkfx = ((data_dq_zdkfx[['kcmc']].drop_duplicates()).values.tolist())
+# res = []
+# for i, temp in enumerate(zfdata_dq_zdkfx):
+#     if temp != [None]:
+#         res.append(temp)
+#         print(res[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+# print(zfdata_dq_zdkfx[i][0], end=',')  # 打印列表不换行！！！end='，'分隔
+# print('\n')
+zfdata_dq_zdkfx = data_dq_zdkfx.groupby('kcmc')['yjms'].count()  # 利用groupby进行分组,对重点扣分项目进行汇总。
+print(zfdata_dq_zdkfx, end='\n')
 print('涉及考试系统设备厂商家家，如下：')
-print(data_dq_zdkfx[['kcmc']].drop_duplicates().count())
+
+# 2020-0505,产生考试系统设备提供商与考场间关系表（KSXTYKC）
+sql_query_xtykc = "SELECT * from KSXTYKC t   WHERE to_char(t.scyf,'yyyy-MM-dd')" \
+                  " like '2020-04-__'ORDER BY t.kskm,t.ksxtcsmc ASC"  # 当前考试系统设备提供商与考场间关系表
+data_dq_xtykc = pd.read_sql(sql_query_xtykc, engine1)  # Step1 : read csv
+data_xtykc = data_dq_xtykc[['kcmc', 'kskm', 'ksxtcsmc']]  # 取出有用的关系项
+print(data_xtykc, end='\n')
+
+res3 = {}
+res3['ksxtcsmc'] = []
+res3['times'] = []
+
+for i, temp in enumerate(data_dq_zdkfx['kcmc']):
+    if temp in data_xtykc['kcmc'].values.tolist():  # 转换成列表
+        # print('%s  使用' % temp, end='\n')
+        # print(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0], end='\n')
+        # print(zfdata_dq_zdkfx[temp], end='\n')
+        res3['ksxtcsmc'].append(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0])
+        res3['times'].append(zfdata_dq_zdkfx[temp])
+    else:
+        print('%s  没使用任何考试系统设备' % temp, end='\n')
+
+xt_times = pd.DataFrame(res3) #字典转列表
+xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum])
+print(xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum]),end='\n')
+
 
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id, temp in enumerate(data_dq_zdkfx['yjms']):
@@ -402,7 +435,7 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
     # print('输出%s行：' % id, temp[keyworld_zdkf.span()[1] + 1:keyworld_wkfjl.span()[0]], end='\n')
     kfx = (temp[keyworld_zdkf.span()[1] + 1:keyworld_wkfjl.span()[0]]).split(",")
     # print(kfx, end='\n')     #原扣分项目
-    print('\n')
+    # print('\n')
     km2kfdm_res1 = []
     km2kfdm_res2 = []
 
@@ -418,8 +451,8 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
             else:
                 km2kfdm_res2.append(temp_kfda)
 
-        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res1, end='\n')
-        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res2, end='\n')
+        # print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res1, end='\n')
+        # print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res2, end='\n')
     else:
         for temp_kfda in kfx:  # 过滤扣分代码
             if temp_kfda in list(map(str, km3kfdm)):
@@ -427,18 +460,18 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
             else:
                 km3kfdm_res2.append(temp_kfda)
 
-        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res1, end='\n')
-        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
+        # print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res1, end='\n')
+        # print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
 
 data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')  # 直接更改列数值类型
-print(data_dq_zdkfx['ksrq'].dtypes)
+# print(data_dq_zdkfx['ksrq'].dtypes)
 data_dq_zdkfx.reset_index()  # 设置索引必须先复位再设置。
 data_dq_zdkfx.set_index('ksrq')  # 重新索引后补重新回赋不改变原索引的dataframe
-print(data_dq_zdkfx.set_index('ksrq')[:'2020-01-10'], end='\n')  # 查询指定天数前的日期
+# print(data_dq_zdkfx.set_index('ksrq')[:'2020-01-10'], end='\n')  # 查询指定天数前的日期
 
-print('无重点扣分项涉及日期共%s天。' % (data_dq_zdkfx[['ksrq']].drop_duplicates().shape[0]))
-print('无重点扣分项涉及具体日期,如下表：')
-print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
+# print('无重点扣分项涉及日期共%s天。' % (data_dq_zdkfx[['ksrq']].drop_duplicates().shape[0]))
+# print('无重点扣分项涉及具体日期,如下表：')
+# print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
 
 # mm = data_dq_zdkfx[['ksrq']].drop_duplicates()
 #
@@ -451,9 +484,6 @@ print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
 # print('返回年中的周：\n', dates.dt.weekofyear)
 # print('返回星期几的名称：\n', dates.dt.weekday)
 # print('返回月份的天数：\n',dates.dt.days_in_month)
-
-
-
 
 
 # （2）、考试时间过短
