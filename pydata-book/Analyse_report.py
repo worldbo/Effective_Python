@@ -420,7 +420,7 @@ for i, temp in enumerate(data_dq_zdkfx['kcmc'].drop_duplicates()):
 xt_times = pd.DataFrame(res3) #字典转列表
 xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum])
 print(xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum]),end='\n')
-
+print('\n')
 
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id, temp in enumerate(data_dq_zdkfx['yjms']):

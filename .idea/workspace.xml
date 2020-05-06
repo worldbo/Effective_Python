@@ -308,14 +308,7 @@
       <workItem from="1588724673701" duration="4983000" />
       <workItem from="1588750415977" duration="1792000" />
       <workItem from="1588764745381" duration="7487000" />
-      <workItem from="1588772445332" duration="2886000" />
-    </task>
-    <task id="LOCAL-00028" summary="第二十条：page46">
-      <created>1584876740611</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1584876740611</updated>
+      <workItem from="1588772445332" duration="3184000" />
     </task>
     <task id="LOCAL-00029" summary="MySQL">
       <created>1585207223585</created>
@@ -653,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588772254108</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="修改的了扣分代码">
+      <created>1588775349137</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1588775349138</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
