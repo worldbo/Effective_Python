@@ -94,6 +94,9 @@ km3kfdm = [30000, 30100, 30101, 30102, 30103, 30104, 30105, 30106, 30107, 30108,
 # 科目二系统提供商与考场名称:
 km2ksxt_kcmc = {'吉林市九新科目二分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉利科目二分考场': '安徽三联交通应用技术股份有限公司'}
 
+#科目二大型车考试场名称：
+km2dxc_kcmc = ['吉林市九新科目二分考场','吉林市交管支队科目二考场','吉林舒兰蓝盾科目二分考场']
+
 # 科目三系统提供航与考场名称:
 km3ksxt_kcmc = {'吉林市九新江城科目三分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉凇鸿利科目三分考场': '安徽三联交通应用技术股份有限公司',
                 '吉林市交警支队科目三分考场': '安徽三联交通应用技术股份有限公司', '吉林市舒兰蓝盾科目三分考场': '安徽三联交通应用技术股份有限公司'}
@@ -420,7 +423,7 @@ for i, temp in enumerate(data_dq_zdkfx['kcmc'].drop_duplicates()):
 xt_times = pd.DataFrame(res3) #字典转列表
 xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum])
 print(xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum]),end='\n')
-print('\n')
+# print(data_dq_zdkfx,'\n')
 
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
 for id, temp in enumerate(data_dq_zdkfx['yjms']):
@@ -445,14 +448,25 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
     # zhkm2kfdm_xxc = list(map(str,km2kfdm_xxc))
     # print(zhkm2kfdm_xxc)
     if data_dq_zdkfx.loc[id, 'kskm'] == '科目二':
-        for temp_kfda in kfx:  # 过滤扣分代码
-            if temp_kfda in list(map(str, km2kfdm_xxc)):
-                km2kfdm_res1.append(temp_kfda)
-            else:
-                km2kfdm_res2.append(temp_kfda)
+        if data_dq_zdkfx.loc[id, 'kcmc'] in km2dxc_kcmc:
+            for temp_kfda in kfx:  # 过滤扣分代码
+                if temp_kfda in list(map(str, km2kfdm)):
+                    km2kfdm_res1.append(temp_kfda)
+                else:
+                    km2kfdm_res2.append(temp_kfda)
 
-        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res1, end='\n')
-        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km2kfdm_res2, end='\n')
+            print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km2kfdm_res1), end='\n')
+            print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km2kfdm_res2), end='\n')
+        else:
+            for temp_kfda in kfx:  # 过滤扣分代码
+                if temp_kfda in list(map(str, km2kfdm_xxc)):
+                    km2kfdm_res1.append(temp_kfda)
+                else:
+                    km2kfdm_res2.append(temp_kfda)
+
+            print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km2kfdm_res1), end='\n')
+            print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km2kfdm_res2), end='\n')
+
     else:
         for temp_kfda in kfx:  # 过滤扣分代码
             if temp_kfda in list(map(str, km3kfdm)):
@@ -460,8 +474,8 @@ for id, temp in enumerate(data_dq_zdkfx['yjms']):
             else:
                 km3kfdm_res2.append(temp_kfda)
 
-        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res1, end='\n')
-        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], km3kfdm_res2, end='\n')
+        print('该考场名称为:%s,过滤后的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km3kfdm_res1), end='\n')
+        print('该考场名称为:%s,没通过过滤的该考场扣分代码为：' % data_dq_zdkfx.loc[id, 'kcmc'], set(km3kfdm_res2), end='\n')
 
 data_dq_zdkfx['ksrq'] = data_dq_zdkfx['ksrq'].astype('datetime64[D]')  # 直接更改列数值类型
 # print(data_dq_zdkfx['ksrq'].dtypes)
@@ -487,6 +501,21 @@ print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
 
 
 # （2）、考试时间过短
+# 考试时间过短需要解决如下问题：
+#a.无备案的考车考场；b.每个考场考试预警次数统计；C.每个考场考试发生的项目统计（精确到哪个项目，如侧方1）；
+#d.每个考试系统提供商预警次数统计；f.多少考生触发预警；g.每个考生触发预警次数；h.多少考车触发预警，每个考车触发次数。
+#
+sql_query_xmsjgd = "SELECT * from XMKSSJGD_LS t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
+                 " like '2020-01-__'ORDER BY t.kccp ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_xmsjgd = pd.read_sql(sql_query_xmsjgd, engine1)  # Step1 : read csv
+data_xmsjgd = data_dq_xmsjgd[['kcmc', 'kssb', 'kccp']]  # 取出有用的关系项
+print(data_xmsjgd,end='\n')
+
+print('触发考试过短预警信息无考车备案考场如下：')
+print(data_xmsjgd.query('kccp == [None]')['kcmc'].drop_duplicates().values.tolist(),end='\n')
+
+
+
 # （3）、考试时间过长
 # （4）、设备重叠
 # （5）、考试成绩不一致
