@@ -94,8 +94,8 @@ km3kfdm = [30000, 30100, 30101, 30102, 30103, 30104, 30105, 30106, 30107, 30108,
 # 科目二系统提供商与考场名称:
 km2ksxt_kcmc = {'吉林市九新科目二分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉利科目二分考场': '安徽三联交通应用技术股份有限公司'}
 
-#科目二大型车考试场名称：
-km2dxc_kcmc = ['吉林市九新科目二分考场','吉林市交管支队科目二考场','吉林舒兰蓝盾科目二分考场']
+# 科目二大型车考试场名称：
+km2dxc_kcmc = ['吉林市九新科目二分考场', '吉林市交管支队科目二考场', '吉林舒兰蓝盾科目二分考场']
 
 # 科目三系统提供航与考场名称:
 km3ksxt_kcmc = {'吉林市九新江城科目三分考场': '安徽三联交通应用技术股份有限公司', '吉林市吉凇鸿利科目三分考场': '安徽三联交通应用技术股份有限公司',
@@ -420,9 +420,9 @@ for i, temp in enumerate(data_dq_zdkfx['kcmc'].drop_duplicates()):
     else:
         print('%s  没使用任何考试系统设备' % temp, end='\n')
 
-xt_times = pd.DataFrame(res3) #字典转列表
-xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum])
-print(xt_times.groupby('ksxtcsmc')['times'].agg([len,np.sum]),end='\n')
+xt_times = pd.DataFrame(res3)  # 字典转列表
+xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum])
+print(xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]), end='\n')
 # print(data_dq_zdkfx,'\n')
 
 # 清洗：找出表格ZDKFX_LS中yjms字段中重点扣分项：与无扣分记录！间的扣分代码并存入列表。
@@ -502,18 +502,75 @@ print(data_dq_zdkfx.set_index('yjlx')['ksrq'].drop_duplicates())
 
 # （2）、考试时间过短
 # 考试时间过短需要解决如下问题：
-#a.无备案的考车考场；b.每个考场考试预警次数统计；C.每个考场考试发生的项目统计（精确到哪个项目，如侧方1）；
-#d.每个考试系统提供商预警次数统计；f.多少考生触发预警；g.每个考生触发预警次数；h.多少考车触发预警，每个考车触发次数。
+# a.无备案的考车考场；b.每个考场考试预警次数统计；C.每个考场考试发生的项目统计（精确到哪个项目，如侧方1）；
+# d.每个考试系统提供商预警次数统计；f.多少考生触发预警；g.每个考生触发预警次数，在哪个项目；h.多少考车触发预警，每个考车触发次数。
 #
 sql_query_xmsjgd = "SELECT * from XMKSSJGD_LS t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
-                 " like '2020-01-__'ORDER BY t.kccp ASC"  # 地区本月考试项目扣分表情况统计
+                   " like '2020-01-__'ORDER BY t.kccp ASC"  # 地区本月考试项目扣分表情况统计
 data_dq_xmsjgd = pd.read_sql(sql_query_xmsjgd, engine1)  # Step1 : read csv
 data_xmsjgd = data_dq_xmsjgd[['kcmc', 'kssb', 'kccp']]  # 取出有用的关系项
-print(data_xmsjgd,end='\n')
+print(data_xmsjgd, end='\n')
 
 print('触发考试过短预警信息无考车备案考场如下：')
-print(data_xmsjgd.query('kccp == [None]')['kcmc'].drop_duplicates().values.tolist(),end='\n')
+print(",".join(data_xmsjgd.query('kccp == [None]')['kcmc'].drop_duplicates().values.tolist()), end='\n')
 
+print('项目考试时间过短涉及考场共%s家。如下：' % (data_xmsjgd[['kcmc']].drop_duplicates().shape[0]))
+
+print('每个考场考试预警次数如下：')
+print(data_xmsjgd.groupby('kcmc').count()['kssb'], end='\n')
+print('本月触发考试项目过短预警总次数：共%s次' % data_xmsjgd.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0], end='\n')
+
+print('每个考场考试触发预警的项目统计如下：')
+# zfdata_dq_xmsjgd = data_dq_xmsjgd.groupby('kcmc')  # 利用groupby进行分组,对项目时间过短扣分项目进行汇总。
+def get_kssb_number(x):
+    """利用→分隔符，取出系统中的项目，主要取第一位序号和最后一位的项目名称
+    并定位到项目号如：22002655，如设置规范的请能分清项目的几号"""
+    df_temp = x[3]
+    return df_temp
+
+zfdata_dq_xmsjgd = pd.merge(data_dq_xmsjgd,(data_dq_xmsjgd['kssb'].str.split('→',expand=True)),how='left',left_index=True,right_index=True)
+# print(zfdata_dq_xmsjgd.groupby('kcmc').apply(get_kssb_number), end='\n')     #应用apply可以结合函数，其可以使dataframe或series
+print(zfdata_dq_xmsjgd.groupby(['kcmc',3])[3].count())
+print('触发预警的项目(如侧方1）如下:', end='\n')
+print(zfdata_dq_xmsjgd.groupby(['kcmc',0,2,3])[0].count())
+print('触发预警的最多的项目(如侧方1）如下:', end='\n')
+g1 = zfdata_dq_xmsjgd.reset_index().groupby('kcmc')  #重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
+# print(g1.get_group('吉林蛟河市鹏驰社会化考场科目二'))
+for name,group in g1:              #遍历分组1
+    print(name,end='\n')
+    for name1,group1 in group.groupby(3,as_index=False):#遍历分组2
+        print(name1, end='\n')
+        xm_dict = {}
+        for name2, group2 in group1.groupby(0, as_index=False):  # 遍历分组3
+            # print(name2, end='\n')
+            # print(group2[0].count(), end='\n')
+            xm_dict[name2] = group2[0].count()
+        print(xm_dict)
+        key_name = max(xm_dict, key=xm_dict.get)
+        print(key_name)
+        print(group2.loc[group2[0] == key_name][2].drop_duplicates().values.tolist(), end='\n')
+
+# d.每个考试系统提供商预警次数统计
+
+zfdata_dq_xmsjgd = data_dq_xmsjgd.groupby('kcmc')['kssb'].count()
+res4 = {}
+res4['ksxtcsmc'] = []
+res4['times'] = []
+
+for i, temp in enumerate(data_dq_xmsjgd['kcmc'].drop_duplicates()):
+    if temp in data_xtykc['kcmc'].values.tolist():  # 转换成列表
+        res4['ksxtcsmc'].append(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0])
+        res4['times'].append(zfdata_dq_xmsjgd[temp])
+    else:
+        print('%s  没使用任何考试系统设备' % temp, end='\n')
+
+xt_times = pd.DataFrame(res4)  # 字典转列表
+xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum])
+
+print('本月考试系统提供商预警次数统计如下：')
+print(xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]), end='\n')
+
+#
 
 
 # （3）、考试时间过长
