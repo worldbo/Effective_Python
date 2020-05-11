@@ -516,11 +516,14 @@ print(",".join(data_xmsjgd.query('kccp == [None]')['kcmc'].drop_duplicates().val
 
 print('项目考试时间过短涉及考场共%s家。如下：' % (data_xmsjgd[['kcmc']].drop_duplicates().shape[0]))
 
+total_times = data_xmsjgd.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0]
 print('每个考场考试预警次数如下：')
-print(data_xmsjgd.groupby('kcmc').count()['kssb'], end='\n')
-print('本月触发考试项目过短预警总次数：共%s次' % data_xmsjgd.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0], end='\n')
+print(data_xmsjgd.groupby('kcmc')['kssb'].agg([len]).assign(range=data_xmsjgd.groupby('kcmc')['kssb'].count()/total_times), end='\n')
+print('本月触发考试项目过短预警总次数：共%s次' %total_times, end='\n')
 
 print('每个考场考试触发预警的项目统计如下：')
+
+
 # zfdata_dq_xmsjgd = data_dq_xmsjgd.groupby('kcmc')  # 利用groupby进行分组,对项目时间过短扣分项目进行汇总。
 def get_kssb_number(x):
     """利用→分隔符，取出系统中的项目，主要取第一位序号和最后一位的项目名称
@@ -528,17 +531,19 @@ def get_kssb_number(x):
     df_temp = x[3]
     return df_temp
 
-zfdata_dq_xmsjgd = pd.merge(data_dq_xmsjgd,(data_dq_xmsjgd['kssb'].str.split('→',expand=True)),how='left',left_index=True,right_index=True)
+
+zfdata_dq_xmsjgd = pd.merge(data_dq_xmsjgd, (data_dq_xmsjgd['kssb'].str.split('→', expand=True)), how='left',
+                            left_index=True, right_index=True)
 # print(zfdata_dq_xmsjgd.groupby('kcmc').apply(get_kssb_number), end='\n')     #应用apply可以结合函数，其可以使dataframe或series
-print(zfdata_dq_xmsjgd.groupby(['kcmc',3])[3].count())
+print(zfdata_dq_xmsjgd.groupby(['kcmc', 3])[3].count())
 print('触发预警的项目(如侧方1）如下:', end='\n')
-print(zfdata_dq_xmsjgd.groupby(['kcmc',0,2,3])[0].count())
+print(zfdata_dq_xmsjgd.groupby(['kcmc', 0, 2, 3])[0].count())
 print('触发预警的最多的项目(如侧方1）如下:', end='\n')
-g1 = zfdata_dq_xmsjgd.reset_index().groupby('kcmc')  #重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
+g1 = zfdata_dq_xmsjgd.reset_index().groupby('kcmc')  # 重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
 # print(g1.get_group('吉林蛟河市鹏驰社会化考场科目二'))
-for name,group in g1:              #遍历分组1
-    print(name,end='\n')
-    for name1,group1 in group.groupby(3,as_index=False):#遍历分组2
+for name, group in g1:  # 遍历分组1
+    print(name, end='\n')
+    for name1, group1 in group.groupby(3, as_index=False):  # 遍历分组2
         print(name1, end='\n')
         xm_dict = {}
         for name2, group2 in group1.groupby(0, as_index=False):  # 遍历分组3
@@ -569,9 +574,16 @@ xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum])
 
 print('本月考试系统提供商预警次数统计如下：')
 print(xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]), end='\n')
+# 统计数据实验：
+xt_times1 = xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
+xt_times1.rename(columns={'len': '次', 'sum': '和'}, inplace=True)
+# print(xt_times1.sum(axis=0))  # 必须在sum中设置(axis=0)，列计算或(axis=1)行计算,其他的如mean（）等也同样
+# print(xt_times1.describe())
+# print(xt_times1.corr(),end='\n')  # 相关系数
+# print(xt_times1.std(),end='\n')  # 标准差
+# print(xt_times1.cov(),end='\n')  # 协方差
 
-#
-
+print(xt_times1.assign(range=xt_times1['次'] / total_times))  # 增加一列运算值
 
 # （3）、考试时间过长
 # （4）、设备重叠
