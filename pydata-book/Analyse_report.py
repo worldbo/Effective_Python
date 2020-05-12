@@ -518,7 +518,14 @@ print('项目考试时间过短涉及考场共%s家。如下：' % (data_xmsjgd[
 
 total_times = data_xmsjgd.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0]
 print('每个考场考试预警次数如下：')
-print(data_xmsjgd.groupby('kcmc')['kssb'].agg([len]).assign(range=data_xmsjgd.groupby('kcmc')['kssb'].count()/total_times), end='\n')
+
+# xt_times2 = xt_times1.assign(range=xt_times1['预警数'] / total_times * 100).copy()  # assign()增加一列百分数运算值
+# xt_times2.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
+# print(xt_times2)
+xmsjgd_times = data_xmsjgd.groupby('kcmc')['kssb'].agg([len]).assign(range=data_xmsjgd.groupby('kcmc')['kssb'].count()/total_times*100).copy()
+xmsjgd_times.rename(columns={'len': '本月产生预警考试场数','range': '占总预警数量百分比'}, inplace=True)
+print(xmsjgd_times.sort_values(by=['占总预警数量百分比'],ascending=False), end='\n')
+
 print('本月触发考试项目过短预警总次数：共%s次' %total_times, end='\n')
 
 print('每个考场考试触发预警的项目统计如下：')
@@ -569,27 +576,91 @@ for i, temp in enumerate(data_dq_xmsjgd['kcmc'].drop_duplicates()):
     else:
         print('%s  没使用任何考试系统设备' % temp, end='\n')
 
-xt_times = pd.DataFrame(res4)  # 字典转列表
+xt_times = pd.DataFrame(res4)  # 字典转数据帧
 xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum])
 
 print('本月考试系统提供商预警次数统计如下：')
-print(xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]), end='\n')
 # 统计数据实验：
 xt_times1 = xt_times.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
-xt_times1.rename(columns={'len': '次', 'sum': '和'}, inplace=True)
+xt_times1.rename(columns={'len': '预警考场数', 'sum': '预警数'}, inplace=True)
 # print(xt_times1.sum(axis=0))  # 必须在sum中设置(axis=0)，列计算或(axis=1)行计算,其他的如mean（）等也同样
 # print(xt_times1.describe())
 # print(xt_times1.corr(),end='\n')  # 相关系数
 # print(xt_times1.std(),end='\n')  # 标准差
 # print(xt_times1.cov(),end='\n')  # 协方差
+xt_times2 = xt_times1.assign(range=xt_times1['预警数'] / total_times * 100).copy()  # assign()增加一列百分数运算值
+xt_times2.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
+print(xt_times2.sort_values(by=['占总预警数量百分比'], ascending=False))
+#f.多少考生触发预警；g.每个考生触发预警次数，在哪个项目；h.多少考车触发预警，每个考车触发次数。
+print('\n\n')
+print('本月共有%s个考生触发项目考试时间过短预警。'%data_dq_xmsjgd['lsh'].drop_duplicates().count(),end='\n')
+print('触发考试过短预警信息考生流水号如下：')
+print(",".join(data_dq_xmsjgd['lsh'].drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考生考试触发预警的项目统计如下：')
+ks_times = data_dq_xmsjgd.groupby(['kcmc','lsh','ksrq'])['lsh'].agg([len]).copy()
+print(ks_times)
+print('触发考试过短预警信息次数的考生从大到小排序', end='\n')
+print(ks_times.sort_values(by=['len'], ascending=False))
+print('本月共有%s个考车触发项目考试时间过短预警。'%data_dq_xmsjgd['kccp'].drop_duplicates().count(),end='\n')
+print('触发考试过短预警信息考车车牌如下：')
+print(",".join(data_dq_xmsjgd['kccp'].dropna(how='any').drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考车考试触发预警的项目统计如下：')
+ks_times1 = data_dq_xmsjgd.groupby(['kcmc','lsh','ksrq','kccp'])['kccp'].agg([len]).copy()
+print(ks_times1)
+print('触发考试过短预警信息次数的考车从大到小排序', end='\n')
+print(ks_times1.sort_values(by=['len'], ascending=False))
 
-print(xt_times1.assign(range=xt_times1['次'] / total_times))  # 增加一列运算值
 
-# （3）、考试时间过长
-# （4）、设备重叠
+# （3）、考试时间超长
+# 考试时间过长需要解决如下问题：
+#
+sql_query_xmwccc = "SELECT * from XMWCSJCC_LS t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
+                   " like '2020-01-__'ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_xmwccc = pd.read_sql(sql_query_xmwccc, engine1)  # Step1 : read csv
+data_sbcdsjyc = data_dq_xmwccc[['kcmc', 'xm', 'ksrq']]  # 取出有用的关系项
+data_sbcdsjyc.rename(columns={'kcmc': '考场', 'xm': '考生姓名', 'ksrq': '考试日期'}, inplace=True)
+print('考试时间过长预警触发涉及考场共%s家。如下：' % (data_dq_xmwccc[['kcmc']].drop_duplicates().shape[0]))
+print('考试时间过长预警触发考场情况：')
+print(data_sbcdsjyc.groupby('考场')['考场'].count(), end='\n')
+print('考试时间过长预警触发考生情况：')
+print(data_sbcdsjyc.groupby(['考场', '考生姓名', '考试日期'])['考场'].agg([len]), end='\n')
+
+
+# （4）、设备重叠及考试时间异常
+# a.无备案的考车考场；b.每个考场考试预警次数统计；C.每个考场考试发生的项目统计（精确到哪个项目，如侧方1）；
+# d.每个考试系统提供商预警次数统计；f.多少考生触发预警；g.每个考生触发预警次数，在哪个项目；h.多少考车触发预警，每个考车触发次数。
+sql_query_sbcd = "SELECT * from KSXTSJYC_LS t  WHERE (to_char(t.scyf,'yyyy-MM-dd')" \
+                   " like '2020-01-__') and (yjms = '与其他考试间存在设备重叠！') ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_sbcd = pd.read_sql(sql_query_sbcd, engine1)  # Step1 : read csv
+data_sbcd = data_dq_sbcd[['kcmc', 'lsh', 'ksrq']]  # 取出有用的关系项
+data_sbcd.rename(columns={'kcmc': '考场', 'lsh': '考生流水号', 'ksrq': '考试日期'}, inplace=True)
+print('设备重叠触发预警涉及考场共%s家。如下：' % (data_dq_sbcd[['kcmc']].drop_duplicates().shape[0]))
+
+
+
+
+
+sql_query_sjyc = "SELECT * from KSXTSJYC_LS t  WHERE (to_char(t.scyf,'yyyy-MM-dd')" \
+                   " like '2020-01-__') and (yjms = '考试系统时间异常！') ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
+data_dq_sjyc = pd.read_sql(sql_query_sjyc, engine1)  # Step1 : read csv
+data_sjyc = data_dq_sjyc[['kcmc', 'lsh', 'ksrq']]  # 取出有用的关系项
+data_sjyc.rename(columns={'kcmc': '考场', 'lsh': '考生流水号', 'ksrq': '考试日期'}, inplace=True)
+print('考试时间异常预警涉及考场共%s家。如下：'% (data_dq_sjyc[['kcmc']].drop_duplicates().shape[0]))
+
+
+
+
+
+
 # （5）、考试成绩不一致
+
 # （6）、考试过程异常预警数据综合分析：
 
 # 7、考试员合格率情况：
 
 # 8、综合分析，重点发现问题考场：
+# 本程序依据总队考试监管通报总队考试监管通报内容进行数据完善
+# 清洗数据：a.读入数据；b.数据预览；c.检查NULL值；d.补全空值；e.特征工程；f.编码；g.再check；
+# 数据分析与挖掘：数据探索（质量分析、特征分析）、数据预处理（清洗、集成、变换、规约）、挖掘建模
+# （分类预测、聚类分析、关联规则、时序分析、离群点检测）
+
