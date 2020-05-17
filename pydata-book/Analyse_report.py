@@ -547,15 +547,12 @@ print('触发预警的项目(如侧方1）如下:', end='\n')
 print(zfdata_dq_xmsjgd.groupby(['kcmc', 0, 2, 3])[0].count())
 print('触发预警的最多的项目(如侧方1）如下:', end='\n')
 g1 = zfdata_dq_xmsjgd.reset_index().groupby('kcmc')  # 重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
-# print(g1.get_group('吉林蛟河市鹏驰社会化考场科目二'))
-for name, group in g1:  # 遍历分组1
+for name,group in g1:  # 遍历分组1
     print(name, end='\n')
     for name1, group1 in group.groupby(3, as_index=False):  # 遍历分组2
         print(name1, end='\n')
         xm_dict = {}
         for name2, group2 in group1.groupby(0, as_index=False):  # 遍历分组3
-            # print(name2, end='\n')
-            # print(group2[0].count(), end='\n')
             xm_dict[name2] = group2[0].count()
         print(xm_dict)
         key_name = max(xm_dict, key=xm_dict.get)
@@ -609,6 +606,7 @@ ks_times1 = data_dq_xmsjgd.groupby(['kcmc','lsh','ksrq','kccp'])['kccp'].agg([le
 print(ks_times1)
 print('触发考试过短预警信息次数的考车从大到小排序', end='\n')
 print(ks_times1.sort_values(by=['len'], ascending=False))
+
 
 
 # （3）、考试时间超长
@@ -665,6 +663,49 @@ xt_times3 = xt_times2.assign(range=xt_times2['预警数'] / total_times1 * 100).
 xt_times3.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
 print(xt_times3.sort_values(by=['占总预警数量百分比'], ascending=False))
 
+print('\n\n\n\n')
+print('本月共有%s个考生触发设备重叠预警。'%data_dq_sbcd['lsh'].drop_duplicates().count(),end='\n')
+print('触发设备重叠预警信息考生流水号如下：')
+print(",".join(data_dq_sbcd['lsh'].drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考生考试触发设备重叠预警的项目统计如下：')
+ks_sbcd_times = data_dq_sbcd.groupby(['kcmc','lsh','ksrq'])['lsh'].agg([len]).copy()
+print(ks_sbcd_times)
+print('触发设备重叠预警信息次数的考生从大到小排序', end='\n')
+print(ks_sbcd_times.sort_values(by=['len'], ascending=False))
+print('本月共有%s个考车触发设备重叠预警。'%data_dq_sbcd['kccp'].drop_duplicates().count(),end='\n')
+print('触发设备重叠预警信息考车车牌如下：')
+print(",".join(data_dq_sbcd['kccp'].dropna(how='any').drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考车考试触发设备重叠预警的项目统计如下：')
+ks_sbcd_times1 = data_dq_sbcd.groupby(['kcmc','lsh','ksrq','kccp'])['kccp'].agg([len]).copy()
+print(ks_sbcd_times1)
+print('触发设备重叠预警信息次数的考车从大到小排序', end='\n')
+print(ks_sbcd_times1.sort_values(by=['len'], ascending=False))
+
+print('\n\n\n\n')
+#设备重叠项目情况分析：
+
+zfdata_dq_sbcd = pd.merge(data_dq_sbcd, (data_dq_sbcd['kssb'].str.split('→', expand=True)), how='left',
+                            left_index=True, right_index=True)
+print(zfdata_dq_sbcd.groupby(['kcmc', 3])[3].count())
+print('触发设备重叠预警的项目(如侧方1）如下:', end='\n')
+print(zfdata_dq_sbcd.groupby(['kcmc', 0, 2, 3])[0].count())
+print('触发设备重叠预警的最多的项目(如侧方1）如下:', end='\n')
+g1_sbcd = zfdata_dq_sbcd.reset_index().groupby('kcmc')  # 重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
+# print(g1.get_group('吉林蛟河市鹏驰社会化考场科目二'))
+for name_sbcd, group_sbcd in g1_sbcd:  # 遍历分组1
+    print(name_sbcd, end='\n')
+    for name1_sbcd, group1_sbcd in group_sbcd.groupby(3, as_index=False):  # 遍历分组2
+        print(name1_sbcd, end='\n')
+        xm_dict_sbcd = {}
+        for name2_sbcd, group2_sbcd in group1_sbcd.groupby(0, as_index=False):  # 遍历分组3
+            xm_dict_sbcd[name2_sbcd] = group2_sbcd[0].count()
+        print(xm_dict_sbcd)
+        key_name_sbcd = max(xm_dict_sbcd, key=xm_dict_sbcd.get)
+        print(key_name_sbcd)
+        print(group2_sbcd.loc[group2_sbcd[0] == key_name_sbcd][2].drop_duplicates().values.tolist(), end='\n')
+
+
+
 
 #b.考试时间异常
 
@@ -693,12 +734,51 @@ for i, temp in enumerate(data_dq_sjyc['kcmc'].drop_duplicates()):
 xt_times4 = pd.DataFrame(res6)  # 字典转数据帧
 xt_times4.groupby('ksxtcsmc')['times'].agg([len, np.sum])
 
-print('本月考试系统提供商设备重叠预警次数统计如下：')
+print('本月考试系统提供商考试时间异常预警次数统计如下：')
 xt_times5 = xt_times4.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
 xt_times5.rename(columns={'len': '预警考场数', 'sum': '预警数'}, inplace=True)
 xt_times6 = xt_times5.assign(range=xt_times5['预警数'] / total_times2 * 100).copy()  # assign()增加一列百分数运算值
 xt_times6.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
 print(xt_times6.sort_values(by=['占总预警数量百分比'], ascending=False))
+
+print('\n\n\n\n')
+print('本月共有%s个考生触发考试时间异常预警。'%data_dq_sjyc['lsh'].drop_duplicates().count(),end='\n')
+print('触发考试时间异常预警信息考生流水号如下：')
+print(",".join(data_dq_sjyc['lsh'].drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考生考试触发考试时间异常预警的项目统计如下：')
+ks_sjyc_times = data_dq_sjyc.groupby(['kcmc','lsh','ksrq'])['lsh'].agg([len]).copy()
+print(ks_sjyc_times)
+print('触发考试时间异常预警信息次数的考生从大到小排序', end='\n')
+print(ks_sjyc_times.sort_values(by=['len'], ascending=False))
+print('本月共有%s个考车触发考试时间异常预警。'%data_dq_sjyc['kccp'].drop_duplicates().count(),end='\n')
+print('触发考试时间异常预警信息考车车牌如下：')
+print(",".join(data_dq_sjyc['kccp'].dropna(how='any').drop_duplicates().values.tolist()), end='\n')
+print('每个考场所属考车考试触发考试时间异常预警的项目统计如下：')
+ks_sjyc_times1 = data_dq_sjyc.groupby(['kcmc','lsh','ksrq','kccp'])['kccp'].agg([len]).copy()
+print(ks_sjyc_times1)
+print('触发考试时间异常预警信息次数的考车从大到小排序', end='\n')
+print(ks_sjyc_times1.sort_values(by=['len'], ascending=False))
+
+#考试时间异常情况分析：
+
+zfdata_dq_sjyc = pd.merge(data_dq_sjyc, (data_dq_sjyc['kssb'].str.split('→', expand=True)), how='left',
+                            left_index=True, right_index=True)
+print(zfdata_dq_sjyc.groupby(['kcmc', 3])[3].count())
+print('触发考试时间异常预警的项目(如侧方1）如下:', end='\n')
+print(zfdata_dq_sjyc.groupby(['kcmc', 0, 2, 3])[0].count())
+print('触发考试时间异常预警的最多的项目(如侧方1）如下:', end='\n')
+g1_sjyc = zfdata_dq_sjyc.reset_index().groupby('kcmc')  # 重新索引,按照分组信息组成字典再按照字典处理重新分别组成各自的dataframe
+for name_sjyc, group_sjyc in g1_sjyc:  # 遍历分组1
+    print(name_sjyc, end='\n')
+    for name1_sjyc, group1_sjyc in group_sjyc.groupby(3, as_index=False):  # 遍历分组2
+        print(name1_sjyc, end='\n')
+        xm_dict_sjyc = {}
+        for name2_sjyc, group2_sjyc in group1_sjyc.groupby(0, as_index=False):  # 遍历分组3
+            xm_dict_sjyc[name2_sjyc] = group2_sjyc[0].count()
+        print(xm_dict_sjyc)
+        key_name_sjyc = max(xm_dict_sjyc, key=xm_dict_sjyc.get)
+        print(key_name_sjyc)
+        print(group2_sjyc.loc[group2_sjyc[0] == key_name_sjyc][2].drop_duplicates().values.tolist(), end='\n')
 
 
 
