@@ -613,40 +613,92 @@ print(ks_times1.sort_values(by=['len'], ascending=False))
 
 # （3）、考试时间超长
 # 考试时间过长需要解决如下问题：
-#
+#由于是抽查项目，不再统计生产设备厂家
 sql_query_xmwccc = "SELECT * from XMWCSJCC_LS t  WHERE to_char(t.scyf,'yyyy-MM-dd')" \
                    " like '2020-01-__'ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
 data_dq_xmwccc = pd.read_sql(sql_query_xmwccc, engine1)  # Step1 : read csv
-data_sbcdsjyc = data_dq_xmwccc[['kcmc', 'xm', 'ksrq']]  # 取出有用的关系项
-data_sbcdsjyc.rename(columns={'kcmc': '考场', 'xm': '考生姓名', 'ksrq': '考试日期'}, inplace=True)
-print('考试时间过长预警触发涉及考场共%s家。如下：' % (data_dq_xmwccc[['kcmc']].drop_duplicates().shape[0]))
+data_xmwccc = data_dq_xmwccc[['kcmc', 'xm', 'ksrq']]  # 取出有用的关系项
+data_xmwccc.rename(columns={'kcmc': '考场', 'xm': '考生姓名', 'ksrq': '考试日期'}, inplace=True)
+print('考试时间过长预警触发涉及考场共%s家,%s条。如下：' % ((data_dq_xmwccc[['kcmc']].drop_duplicates().shape[0]),(data_dq_xmwccc[['kcmc']].shape[0])))
 print('考试时间过长预警触发考场情况：')
-print(data_sbcdsjyc.groupby('考场')['考场'].count(), end='\n')
+print(data_xmwccc.groupby('考场')['考场'].count(), end='\n')
 print('考试时间过长预警触发考生情况：')
-print(data_sbcdsjyc.groupby(['考场', '考生姓名', '考试日期'])['考场'].agg([len]), end='\n')
+print(data_xmwccc.groupby(['考场', '考生姓名', '考试日期'])['考场'].agg([len]), end='\n')
 
 
 # （4）、设备重叠及考试时间异常
 # a.无备案的考车考场；b.每个考场考试预警次数统计；C.每个考场考试发生的项目统计（精确到哪个项目，如侧方1）；
 # d.每个考试系统提供商预警次数统计；f.多少考生触发预警；g.每个考生触发预警次数，在哪个项目；h.多少考车触发预警，每个考车触发次数。
+
+#a.设备重叠
 sql_query_sbcd = "SELECT * from KSXTSJYC_LS t  WHERE (to_char(t.scyf,'yyyy-MM-dd')" \
                    " like '2020-01-__') and (yjms = '与其他考试间存在设备重叠！') ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
 data_dq_sbcd = pd.read_sql(sql_query_sbcd, engine1)  # Step1 : read csv
 data_sbcd = data_dq_sbcd[['kcmc', 'lsh', 'ksrq']]  # 取出有用的关系项
 data_sbcd.rename(columns={'kcmc': '考场', 'lsh': '考生流水号', 'ksrq': '考试日期'}, inplace=True)
-print('设备重叠触发预警涉及考场共%s家。如下：' % (data_dq_sbcd[['kcmc']].drop_duplicates().shape[0]))
+print('设备重叠触发预警涉及考场共%s家，%s条。如下：' % (data_dq_sbcd[['kcmc']].drop_duplicates().shape[0],data_dq_sbcd[['kcmc']].shape[0]))
+print(data_sbcd.groupby('考场')['考场'].count(), end='\n')
+
+# 每个考试系统提供商设备重叠预警次数统计
+total_times1 = data_dq_sbcd.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0]
+
+zfdata_dq_sbcd = data_dq_sbcd.groupby('kcmc')['kssb'].count()
+res5 = {}
+res5['ksxtcsmc'] = []
+res5['times'] = []
+
+print(data_dq_sbcd['kcmc'].drop_duplicates())
+for i, temp in enumerate(data_dq_sbcd['kcmc'].drop_duplicates()):
+    if temp in data_xtykc['kcmc'].values.tolist():  # 转换成列表
+        res5['ksxtcsmc'].append(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0])
+        res5['times'].append(zfdata_dq_sbcd[temp])
+    else:
+        print('%s  没使用任何考试系统设备' % temp, end='\n')
+
+xt_times1 = pd.DataFrame(res5)  # 字典转数据帧
+xt_times1.groupby('ksxtcsmc')['times'].agg([len, np.sum])
+
+print('本月考试系统提供商设备重叠预警次数统计如下：')
+xt_times2 = xt_times1.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
+xt_times2.rename(columns={'len': '预警考场数', 'sum': '预警数'}, inplace=True)
+xt_times3 = xt_times2.assign(range=xt_times2['预警数'] / total_times1 * 100).copy()  # assign()增加一列百分数运算值
+xt_times3.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
+print(xt_times3.sort_values(by=['占总预警数量百分比'], ascending=False))
 
 
-
-
+#b.考试时间异常
 
 sql_query_sjyc = "SELECT * from KSXTSJYC_LS t  WHERE (to_char(t.scyf,'yyyy-MM-dd')" \
                    " like '2020-01-__') and (yjms = '考试系统时间异常！') ORDER BY  t.ksrq ASC"  # 地区本月考试项目扣分表情况统计
 data_dq_sjyc = pd.read_sql(sql_query_sjyc, engine1)  # Step1 : read csv
 data_sjyc = data_dq_sjyc[['kcmc', 'lsh', 'ksrq']]  # 取出有用的关系项
 data_sjyc.rename(columns={'kcmc': '考场', 'lsh': '考生流水号', 'ksrq': '考试日期'}, inplace=True)
-print('考试时间异常预警涉及考场共%s家。如下：'% (data_dq_sjyc[['kcmc']].drop_duplicates().shape[0]))
+print('考试时间异常预警涉及考场共%s家,%s条。如下：' % (data_dq_sjyc[['kcmc']].drop_duplicates().shape[0],data_dq_sjyc[['kcmc']].shape[0]))
+print(data_sjyc.groupby('考场')['考场'].count(), end='\n')
 
+# 每个考试系统提供商考试时间异常预警次数统计
+total_times2 = data_dq_sjyc.groupby('kcmc').count()['kssb'].agg([np.sum]).values.tolist()[0]
+zfdata_dq_sjyc = data_dq_sjyc.groupby('kcmc')['kssb'].count()
+res6 = {}
+res6['ksxtcsmc'] = []
+res6['times'] = []
+
+for i, temp in enumerate(data_dq_sjyc['kcmc'].drop_duplicates()):
+    if temp in data_xtykc['kcmc'].values.tolist():  # 转换成列表
+        res6['ksxtcsmc'].append(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0])
+        res6['times'].append(zfdata_dq_sjyc[temp])
+    else:
+        print('%s  没使用任何考试系统设备' % temp, end='\n')
+
+xt_times4 = pd.DataFrame(res6)  # 字典转数据帧
+xt_times4.groupby('ksxtcsmc')['times'].agg([len, np.sum])
+
+print('本月考试系统提供商设备重叠预警次数统计如下：')
+xt_times5 = xt_times4.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
+xt_times5.rename(columns={'len': '预警考场数', 'sum': '预警数'}, inplace=True)
+xt_times6 = xt_times5.assign(range=xt_times5['预警数'] / total_times2 * 100).copy()  # assign()增加一列百分数运算值
+xt_times6.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
+print(xt_times6.sort_values(by=['占总预警数量百分比'], ascending=False))
 
 
 
