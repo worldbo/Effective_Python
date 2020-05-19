@@ -18,6 +18,7 @@ import nltk
 from re import sub
 import numpy as np
 import pandas as pd
+from sparklines import sparklines
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
@@ -34,6 +35,17 @@ import difflib
 
 def get_equal_rate(str1, str2):
     return difflib.SequenceMatcher(None, str1, str2).quick_ratio()
+
+# 定义sparklines函数用于展现数据分布
+def sparkline_str(x):
+    bins = np.histogram(x)[0]
+    sl = ''.join(sparklines(bins))
+    return sl
+
+# 定义groupby之后的列名
+sparkline_str.__name__ = "分布图"
+
+#sparklines函数用法：data.groupby('姓名')[['数量', '金额']].agg(['mean', sparkline_str])
 
 
 username1 = 'world'
@@ -742,7 +754,7 @@ xt_times6.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
 print(xt_times6.sort_values(by=['占总预警数量百分比'], ascending=False))
 
 print('\n\n\n\n')
-print('本月共有%s个考生触发考试时间异常预警。'%data_dq_sjyc['lsh'].drop_duplicates().count(),end='\n')
+print('本月共有%s个考生触发考试时间异常预警。' % data_dq_sjyc['lsh'].drop_duplicates().count(),end='\n')
 print('触发考试时间异常预警信息考生流水号如下：')
 print(",".join(data_dq_sjyc['lsh'].drop_duplicates().values.tolist()), end='\n')
 print('每个考场所属考生考试触发考试时间异常预警的项目统计如下：')
@@ -750,7 +762,7 @@ ks_sjyc_times = data_dq_sjyc.groupby(['kcmc','lsh','ksrq'])['lsh'].agg([len]).co
 print(ks_sjyc_times)
 print('触发考试时间异常预警信息次数的考生从大到小排序', end='\n')
 print(ks_sjyc_times.sort_values(by=['len'], ascending=False))
-print('本月共有%s个考车触发考试时间异常预警。'%data_dq_sjyc['kccp'].drop_duplicates().count(),end='\n')
+print('本月共有%s个考车触发考试时间异常预警。' % data_dq_sjyc['kccp'].drop_duplicates().count(),end='\n')
 print('触发考试时间异常预警信息考车车牌如下：')
 print(",".join(data_dq_sjyc['kccp'].dropna(how='any').drop_duplicates().values.tolist()), end='\n')
 print('每个考场所属考车考试触发考试时间异常预警的项目统计如下：')
@@ -782,13 +794,80 @@ for name_sjyc, group_sjyc in g1_sjyc:  # 遍历分组1
 
 
 
+# （5）、考试成绩不一致(应分别列出科目二、科目三)
+kskm_cjbyzs = ['科目2','科目3']
+
+for i, kskm_cjbyz in enumerate(kskm_cjbyzs):
+    sql_query_cjbyz = "SELECT * from KSCJBYZ_LS t   WHERE (to_char(t.scyf,'yyyy-MM-dd')  " \
+                      "like '2020-01-__') and (kskm = \'{}\') ORDER BY  t.ksrq ASC".format(kskm_cjbyz)  # 地区本月考试成绩不一致情况统计
+    data_dq_cjbyz = pd.read_sql(sql_query_cjbyz, engine1)  # Step1 : read csv
+    data_cjbyz = data_dq_cjbyz[['kcmc', 'lsh', 'ksrq']]  # 取出有用的关系项
+    data_cjbyz.rename(columns={'kcmc': '考场', 'lsh': '考生流水号', 'ksrq': '考试日期'}, inplace=True)
+    print('%s考试成绩不一致预警涉及考场共%s家,%s条。如下：' % (kskm_cjbyz,data_dq_cjbyz[['kcmc']].drop_duplicates().shape[0],data_dq_cjbyz[['kcmc']].shape[0]))
+    print(data_cjbyz.groupby('考场')['考场'].count(), end='\n')
+
+# 每个考试系统提供商考试成绩不一致预警次数统计
+    total_times2_cjbyz = data_dq_cjbyz.groupby('kcmc').count()['lsh'].agg([np.sum]).values.tolist()[0]
+    zfdata_dq_cjbyz = data_dq_cjbyz.groupby('kcmc')['lsh'].count()
+    res_cjbyz = {}
+    res_cjbyz['ksxtcsmc'] = []
+    res_cjbyz['times'] = []
+
+    for i, temp in enumerate(data_dq_cjbyz['kcmc'].drop_duplicates()):
+        if temp in data_cjbyz['考场'].values.tolist():  # 转换成列表
+            res_cjbyz['ksxtcsmc'].append(data_xtykc[data_xtykc['kcmc'] == temp]['ksxtcsmc'].values[0])
+            res_cjbyz['times'].append(zfdata_dq_cjbyz[temp])
+        else:
+            print('%s  没使用任何考试系统设备' % temp, end='\n')
+
+    xt_times_cjbyz = pd.DataFrame(res_cjbyz)  # 字典转数据帧
+    xt_times_cjbyz.groupby('ksxtcsmc')['times'].agg([len, np.sum])
+
+    print('本月%s考试系统提供商考试成绩不一致预警次数统计如下：' % kskm_cjbyz)
+    xt_times5_cjbyz = xt_times_cjbyz.groupby('ksxtcsmc')['times'].agg([len, np.sum]).copy()
+    xt_times5_cjbyz.rename(columns={'len': '预警考场数', 'sum': '预警数'}, inplace=True)
+    xt_times6_cjbyz = xt_times5_cjbyz.assign(range=xt_times5_cjbyz['预警数'] / total_times2_cjbyz * 100).copy()  # assign()增加一列百分数运算值
+    xt_times6_cjbyz.rename(columns={'range': '占总预警数量百分比'}, inplace=True)
+    # xt_times6_cjbyz.style.format("{:0.2f}")
+    # print(xt_times6_cjbyz)
+    print(xt_times6_cjbyz.sort_values(by=['占总预警数量百分比'], ascending=False))
+
+    print('本月%s共有%s个考生触发考试成绩不一致预警。' % (kskm_cjbyz,data_dq_cjbyz['lsh'].drop_duplicates().count()),end='\n')
+    print('%s触发考试成绩不一致预警信息考生流水号如下：' % kskm_cjbyz)
+    print(",".join(data_dq_cjbyz['lsh'].drop_duplicates().values.tolist()), end='\n')
+    print('每个%s考场所属考生考试触发考试成绩不一致预警的项目统计如下：'% kskm_cjbyz)
+    ks_cjbyz_times = data_dq_cjbyz.groupby(['kcmc','lsh','ksrq'])['lsh'].agg([len]).copy()
+    print(ks_cjbyz_times)
+    print('%s触发考试成绩不一致预警信息次数的考生从大到小排序' % kskm_cjbyz, end='\n')
+    print(ks_cjbyz_times.sort_values(by=['len'], ascending=False))
+    print('本月%s共有%s个考车触发考试成绩不一致预警。' % (kskm_cjbyz,data_dq_cjbyz['kccp'].drop_duplicates().count()),end='\n')
+    print('触发考试成绩不一致预警信息考车车牌如下：')
+    print(",".join(data_dq_cjbyz['kccp'].dropna(how='any').drop_duplicates().values.tolist()), end='\n')
+    print('每个%s考场所属考车考试触发考试成绩不一致预警的项目统计如下：' % kskm_cjbyz)
+    ks_cjbyz_times1 = data_dq_cjbyz.groupby(['kcmc','lsh','ksrq','kccp'])['kccp'].agg([len]).copy()
+    print(ks_cjbyz_times1)
+    print('%s触发考试成绩不一致预警信息次数的考车从大到小排序' % kskm_cjbyz, end='\n')
+    print(ks_cjbyz_times1.sort_values(by=['len'], ascending=False))
 
 
-# （5）、考试成绩不一致
+# （6）、考试异常情况(KSYCQK)预警数据综合分析：
+kskm_ksycqks = ['科目一','科目二','科目三']
 
-# （6）、考试过程异常预警数据综合分析：
+for i, kskm_ksycqk in enumerate(kskm_ksycqks):
+
+    sql_query_ksycqk = "SELECT * from KSYCQK_LS t   WHERE (to_char(t.scyf,'yyyy-MM-dd')  " \
+                      "like '2019-12-__') and (kskm = \'{}\') ORDER BY  t.ksrq ASC".format(kskm_ksycqk)  # 地区本月考试异常情况(KSYCQK)预警情况统计
+    data_dq_ksycqk = pd.read_sql(sql_query_ksycqk, engine1)  # Step1 : read csv
+    data_ksycqk = data_dq_ksycqk[['kcmc', 'ycqk', 'ksrq']]  # 取出有用的关系项
+    data_ksycqk.rename(columns={'kcmc': '考场', 'ycqk': '异常情况', 'ksrq': '考试日期'}, inplace=True)
+    print('%s考试成绩不一致预警涉及考场共%s家,%s条。如下：' % (kskm_ksycqk,data_dq_ksycqk[['kcmc']].drop_duplicates().shape[0],data_dq_ksycqk[['kcmc']].shape[0]))
+    print(data_ksycqk.groupby('考场')['考场'].count(), end='\n')
+    print(data_ksycqk.groupby(['考场','异常情况','考试日期'])['异常情况'].agg([len]),end='\n')
+
 
 # 7、考试员合格率情况：
+
+
 
 # 8、综合分析，重点发现问题考场：
 # 本程序依据总队考试监管通报总队考试监管通报内容进行数据完善
