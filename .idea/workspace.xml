@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pydata-book/panpas_style.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/Analysis_Matplotlib.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/PyQt_learning.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/PyQt_learning1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/QT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/testxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pydata-book/tushare_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pydata-book/Analyse_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/Analyse_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pydata-book/panpas_style.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/panpas_style.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +66,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/ProgramData/Anaconda3/Library/bin/pyrcc5.bat" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
-  <component name="RunManager" selected="Python.panpas_style">
+  <component name="RunManager" selected="Python.tushare_test">
     <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -87,7 +98,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Analyse_report_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="PyQt_learning" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,7 +111,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analyse_report_all.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/PyQt_learning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="_pydev_execfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="QT" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,12 +128,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_HOME_DIR$/plugins/python/helpers/pydev/_pydev_imps" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_HOME_DIR$/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/QT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,26 +164,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="panpas_style" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Effective_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/panpas_style.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="yiqing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tushare" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,7 +177,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/yiqing.py" />
+      <option name="SCRIPT_NAME" value="F:\Python\Effective_Python\pydata-book\tushare_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tushare_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Effective_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pydata-book" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/tushare_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.panpas_style" />
+        <item itemvalue="Python.tushare_test" />
+        <item itemvalue="Python.tushare" />
+        <item itemvalue="Python.QT" />
+        <item itemvalue="Python.PyQt_learning" />
         <item itemvalue="Python.Analyse_report" />
-        <item itemvalue="Python.yiqing" />
-        <item itemvalue="Python._pydev_execfile" />
-        <item itemvalue="Python.Analyse_report_all" />
       </list>
     </recent_temporary>
   </component>
@@ -328,14 +339,16 @@
       <workItem from="1589721534422" duration="3264000" />
       <workItem from="1589788545715" duration="3562000" />
       <workItem from="1589802514940" duration="1138000" />
-      <workItem from="1589864341158" duration="18479000" />
-    </task>
-    <task id="LOCAL-00036" summary="Excel2Oracle">
-      <created>1585752607235</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1585752607235</updated>
+      <workItem from="1589864341158" duration="19202000" />
+      <workItem from="1589890955667" duration="38000" />
+      <workItem from="1589891026106" duration="693000" />
+      <workItem from="1590061248409" duration="10139000" />
+      <workItem from="1590072668979" duration="3505000" />
+      <workItem from="1590373405735" duration="1454000" />
+      <workItem from="1590569321163" duration="1291000" />
+      <workItem from="1590736507176" duration="7853000" />
+      <workItem from="1590815625552" duration="2034000" />
+      <workItem from="1590988995629" duration="4640000" />
     </task>
     <task id="LOCAL-00037" summary="#第二十一条：">
       <created>1585752915744</created>
@@ -673,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589722741653</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布">
+      <created>1589890444738</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1589890444739</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -723,7 +743,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第二章：在page35" />
     <MESSAGE value="第二章：在page37" />
     <MESSAGE value="CCYD Data Analysis version 1.0" />
     <MESSAGE value="Python pandas Excel应用" />
@@ -748,22 +767,27 @@
     <MESSAGE value="修改的了系统时间过短增加百分数" />
     <MESSAGE value="修改的了设备重叠考试时间异常" />
     <MESSAGE value="修改的完成了设备重叠考试时间异常" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改的完成了设备重叠考试时间异常" />
+    <MESSAGE value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585748770117" />
+    <state x="2177" y="152" width="512" height="588" key="#com.intellij.tools.ToolEditorDialog" timestamp="1590741825030">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2177" y="152" width="512" height="588" key="#com.intellij.tools.ToolEditorDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590741825030" />
     <state x="656" y="65" key="#xdebugger.evaluate" timestamp="1583557895245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1589722739246">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1589890441954">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589722739246" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589890441954" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -777,10 +801,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="65" y="4" width="1416" height="676" key="DiffContextDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583226578372" />
-    <state x="489" y="117" key="FileChooserDialogImpl" timestamp="1585748745003">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="2187" y="147" key="FileChooserDialogImpl" timestamp="1590741719931">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="489" y="117" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585748745003" />
+    <state x="2187" y="147" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590741719931" />
     <state x="400" y="295" key="Github.CreateGistDialog" timestamp="1584125516654">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -794,50 +819,50 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="627" y="67" key="Github.UntrackedFilesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114060608" />
-    <state width="1864" height="331" key="GridCell.Tab.0.bottom" timestamp="1589869321366">
+    <state width="1864" height="200" key="GridCell.Tab.0.bottom" timestamp="1590744552499">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
+    <state width="1864" height="200" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590744552499" />
     <state width="1544" height="251" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.center" timestamp="1589869321365">
+    <state width="1864" height="200" key="GridCell.Tab.0.center" timestamp="1590744552498">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321365" />
+    <state width="1864" height="200" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590744552498" />
     <state width="1544" height="251" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.left" timestamp="1589869321365">
+    <state width="1864" height="200" key="GridCell.Tab.0.left" timestamp="1590744552498">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427112" />
-    <state width="1864" height="331" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321365" />
+    <state width="1864" height="200" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590744552498" />
     <state width="1544" height="251" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.0.right" timestamp="1589869321366">
+    <state width="1864" height="200" key="GridCell.Tab.0.right" timestamp="1590744552498">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427113" />
-    <state width="1864" height="331" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
+    <state width="1864" height="200" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590744552498" />
     <state width="1544" height="251" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584194136857" />
-    <state width="1864" height="331" key="GridCell.Tab.1.bottom" timestamp="1589869321366">
+    <state width="1864" height="331" key="GridCell.Tab.1.bottom" timestamp="1590072315422">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427115" />
-    <state width="1864" height="331" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
-    <state width="1864" height="331" key="GridCell.Tab.1.center" timestamp="1589869321366">
+    <state width="1864" height="331" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590072315422" />
+    <state width="1864" height="331" key="GridCell.Tab.1.center" timestamp="1590072315422">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
-    <state width="1864" height="331" key="GridCell.Tab.1.left" timestamp="1589869321366">
+    <state width="1864" height="331" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590072315422" />
+    <state width="1864" height="331" key="GridCell.Tab.1.left" timestamp="1590072315422">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
-    <state width="1864" height="331" key="GridCell.Tab.1.right" timestamp="1589869321366">
+    <state width="1864" height="331" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590072315422" />
+    <state width="1864" height="331" key="GridCell.Tab.1.right" timestamp="1590072315422">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1544" height="244" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585895427114" />
-    <state width="1864" height="331" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589869321366" />
+    <state width="1864" height="331" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590072315422" />
     <state width="1864" height="331" key="GridCell.Tab.2.bottom" timestamp="1589717101759">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -866,22 +891,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="598" y="88" key="RollbackChangesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583225975633" />
-    <state x="1822" y="0" key="SettingsEditor" timestamp="1589548075644">
+    <state x="1822" y="0" key="SettingsEditor" timestamp="1590741843575">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583239601300" />
-    <state x="1822" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589548075644" />
+    <state x="1822" y="0" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590741843575" />
     <state x="185" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584042759599" />
     <state x="2031" y="240" width="810" height="823" key="StructurePopup" timestamp="1586243064069">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="453" y="97" width="675" height="655" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585204064202" />
     <state x="2031" y="240" width="810" height="823" key="StructurePopup/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1586243064069" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1589008910698">
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2" timestamp="1589890457928">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="292" y="99" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585811437713" />
-    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589008910698" />
+    <state x="1950" y="124" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589890457928" />
     <state x="1604" y="176" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1589001047858">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -890,11 +915,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2092" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1589864636383">
+    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1590989003090">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1587690031214" />
-    <state x="2092" y="302" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589864636383" />
+    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590989003090" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1587640676038" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
@@ -911,17 +936,18 @@
     <state x="2034" y="87" width="1008" height="1078" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589547511387" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Effective_Python$Helper_Function.coverage" NAME="Helper_Function Coverage Results" MODIFIED="1583484626218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter1" />
-    <SUITE FILE_PATH="coverage/Effective_Python$Excel2Oracle.coverage" NAME="Excel2Oracle Coverage Results" MODIFIED="1585895387437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oracle_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$Oracle_table2table2.coverage" NAME="Oracle_table2table2 Coverage Results" MODIFIED="1586760956515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oracle_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$18.coverage" NAME="18 Coverage Results" MODIFIED="1584874060023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
     <SUITE FILE_PATH="coverage/Effective_Python$Sample_chapter2.coverage" NAME="Sample_chapter2 Coverage Results" MODIFIED="1583813953596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
+    <SUITE FILE_PATH="coverage/Effective_Python$tets.coverage" NAME="tets Coverage Results" MODIFIED="1585199947180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Analyse_report.coverage" NAME="Analyse_report Coverage Results" MODIFIED="1589869148275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
+    <SUITE FILE_PATH="coverage/Effective_Python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585473007026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Helper_Function.coverage" NAME="Helper_Function Coverage Results" MODIFIED="1583484626218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter1" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Excel2Oracle.coverage" NAME="Excel2Oracle Coverage Results" MODIFIED="1585895387437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oracle_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$CCYD_Data_Analysis.coverage" NAME="CCYD_Data_Analysis Coverage Results" MODIFIED="1584188821323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
     <SUITE FILE_PATH="coverage/Effective_Python$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1584191802718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
     <SUITE FILE_PATH="coverage/Effective_Python$test.coverage" NAME="test Coverage Results" MODIFIED="1584192414291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
-    <SUITE FILE_PATH="coverage/Effective_Python$tets.coverage" NAME="tets Coverage Results" MODIFIED="1585199947180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
     <SUITE FILE_PATH="coverage/Effective_Python$19.coverage" NAME="19 Coverage Results" MODIFIED="1584876597647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chapter2" />
-    <SUITE FILE_PATH="coverage/Effective_Python$Analyse_report.coverage" NAME="Analyse_report Coverage Results" MODIFIED="1589869148275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
-    <SUITE FILE_PATH="coverage/Effective_Python$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585473007026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MySQL_Python" />
+    <SUITE FILE_PATH="coverage/Effective_Python$Analysis_Matplotlib.coverage" NAME="Analysis_Matplotlib Coverage Results" MODIFIED="1590067935081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydata-book" />
   </component>
 </project>
