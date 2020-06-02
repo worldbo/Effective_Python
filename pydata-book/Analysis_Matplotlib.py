@@ -25,7 +25,7 @@ import math
 import xlrd
 import xlwt
 import re
-import nltk
+# import nltk
 from re import sub
 import numpy as np
 import pandas as pd

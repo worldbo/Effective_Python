@@ -16,9 +16,9 @@ import tushare as ts
 # # 从上面的属性设置中可以看到，与显示的行数列数有关的选项主要是【display】
 # # 中的【max_columns,max_rows,max_colwidth,line_width】等这几项，只需要
 # # 将这几项属性值设置得大一些就可以解决。
-# pd.set_option('display.max_columns', 1000)
-# pd.set_option('display.width', 1000)
-# pd.set_option('display.max_colwidth', 1000)
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_colwidth', 1000)
 #
 # # 存款利率等宏观经济数据
 # # df_data1 = ts.get_deposit_rate()
@@ -62,13 +62,22 @@ import tushare as ts
 # # df_data = ts.get_index() #获取大盘指数实时行情列表，以表格的形式展示大盘指数实时行情。
 #
 my_stocks = ['601577', '002297', '601390', '601989']
+my_stocks_price = [7.803,5.486,5.015,4.162]
 
+print('开始刷新实时数据**********************************************************************************************************',end='\n')
 while True:
     for i, temp in enumerate(my_stocks):
         # df_data1 = ts.get_hist_data(temp, start='2020-05-29', end='2020-06-01')
         df = ts.get_realtime_quotes(temp)  # 获取实时分笔数据，可以实时取得股票当前报价和成交信息，
-        df_data = df[['code', 'name', 'high', 'low', 'price', 'bid', 'ask', 'volume', 'amount', 'date', 'time']]
-        print('第%s支股票:%s' % (i, temp), end='\n')
+        my_price_difference = float(df['price'].iloc[0]) - my_stocks_price[i]
+        df_stocks_name = df[['name']].iloc[0].values.tolist()[0]
+        df_data = df[['code', 'name', 'high', 'low', 'price', 'bid', 'ask', 'volume', 'amount', 'date', 'time']].copy()
+        df_data.rename(columns={'code': '代码','name': '名称','high':'最高', 'low':'最低','price': '现价','bid':'竞买','ask':'竞卖','volume':'成交量','amount':'成交金额','date':'日期','time':'时间'}, inplace=True)
+        print('第%s支股票:%s，目前差价%.2f' % (i+1, df_stocks_name,my_price_difference), end='\n')
         print(df_data)
+        print('——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————',end='\n')
     time.sleep(10)
-    print('继续刷新实时数据....................................................................',end='\n')
+    print('\n\n\n')
+
+    print('继续刷新实时数据**********************************************************************************************************',end='\n')
+    print('\n')

@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2c85072-8fe6-47ed-93d1-f994d9f3170a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pydata-book/Analysis_Matplotlib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pydata-book/PyQt_learning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pydata-book/PyQt_learning1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pydata-book/QT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pydata-book/testxx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pydata-book/tushare_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pydata-book/Analyse_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/Analyse_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pydata-book/panpas_style.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/panpas_style.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pydata-book/Analysis_Matplotlib.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/Analysis_Matplotlib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pydata-book/tushare_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pydata-book/tushare_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +69,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RunManager" selected="Python.tushare_test">
-    <configuration name="Analyse_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Analysis_Matplotlib" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Effective_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,7 +82,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analyse_report.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pydata-book/Analysis_Matplotlib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,10 +201,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.tushare_test" />
+        <item itemvalue="Python.Analysis_Matplotlib" />
         <item itemvalue="Python.tushare" />
         <item itemvalue="Python.QT" />
         <item itemvalue="Python.PyQt_learning" />
-        <item itemvalue="Python.Analyse_report" />
       </list>
     </recent_temporary>
   </component>
@@ -348,14 +341,8 @@
       <workItem from="1590569321163" duration="1291000" />
       <workItem from="1590736507176" duration="7853000" />
       <workItem from="1590815625552" duration="2034000" />
-      <workItem from="1590988995629" duration="4640000" />
-    </task>
-    <task id="LOCAL-00037" summary="#第二十一条：">
-      <created>1585752915744</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1585752915744</updated>
+      <workItem from="1590988995629" duration="7873000" />
+      <workItem from="1591074193684" duration="4329000" />
     </task>
     <task id="LOCAL-00038" summary="#第二十一条：">
       <created>1585754215982</created>
@@ -693,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589890444739</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布&#10;tushare_test.exe">
+      <created>1590993904853</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1590993904856</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -743,7 +737,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="第二章：在page37" />
     <MESSAGE value="CCYD Data Analysis version 1.0" />
     <MESSAGE value="Python pandas Excel应用" />
     <MESSAGE value="第二十条：page46" />
@@ -768,7 +761,8 @@
     <MESSAGE value="修改的了设备重叠考试时间异常" />
     <MESSAGE value="修改的完成了设备重叠考试时间异常" />
     <MESSAGE value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布" />
+    <MESSAGE value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布&#10;tushare_test.exe" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改的完成了设备重叠考试时间异常&#10;增加pandas style 定义sparklines函数用于展现数据分布&#10;tushare_test.exe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748770117">
@@ -783,11 +777,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="656" y="65" key="#xdebugger.evaluate/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583557895245" />
-    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1589890441954">
+    <state x="2024" y="0" width="803" height="860" key="CommitChangelistDialog2" timestamp="1590993901085">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="353" y="0" width="803" height="860" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1585890451032" />
-    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1589890441954" />
+    <state x="2024" y="0" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590993901085" />
     <state x="311" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584011378072" />
     <state width="314" height="242" key="DatabaseViewActions_Filter" timestamp="1585747747893">
       <screen x="0" y="0" width="1600" height="860" />
@@ -915,11 +909,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1583114089274" />
-    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1590989003090">
+    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1591074318600">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="321" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1587690031214" />
-    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1590989003090" />
+    <state x="2000" y="379" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1591074318600" />
     <state x="289" y="298" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1587640676038" />
     <state x="559" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583228542834">
       <screen x="0" y="0" width="1600" height="860" />
