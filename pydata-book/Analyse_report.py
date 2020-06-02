@@ -248,11 +248,14 @@ pd.set_option('display.max_columns', None)
 # 显示所有行
 pd.set_option('display.max_rows', None)
 # 设置value的显示长度为100，默认为50
-pd.set_option('max_colwidth', 100)
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_colwidth', 1000)
 pd.set_option('display.unicode.ambiguous_as_wide', True)
 pd.set_option('display.unicode.east_asian_width', True)
 pd.set_option('display.width', 180)  # 设置打印宽度(**重要**)
 pd.set_option('expand_frame_repr', False)  # 数据超过总宽度后，是否折叠显示
+
 
 # wd = query_kcmc('2020-01','科目一',km1_qs)
 # print(wd)
