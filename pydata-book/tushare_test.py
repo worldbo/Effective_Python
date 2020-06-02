@@ -19,6 +19,10 @@ import tushare as ts
 pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', 1000)
+pd.set_option('display.unicode.ambiguous_as_wide', True)
+pd.set_option('display.unicode.east_asian_width', True)
+pd.set_option('display.width', 180)  # 设置打印宽度(**重要**)
+pd.set_option('expand_frame_repr', False) #数据超过总宽度后，是否折叠显示
 #
 # # 存款利率等宏观经济数据
 # # df_data1 = ts.get_deposit_rate()
