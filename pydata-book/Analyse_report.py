@@ -256,7 +256,6 @@ pd.set_option('display.unicode.east_asian_width', True)
 pd.set_option('display.width', 180)  # 设置打印宽度(**重要**)
 pd.set_option('expand_frame_repr', False)  # 数据超过总宽度后，是否折叠显示
 
-
 # wd = query_kcmc('2020-01','科目一',km1_qs)
 # print(wd)
 # wd = query_kcmc('2020-01','科目二',km2_qs)
